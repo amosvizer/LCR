@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# screenshots & playwright artifacts
+*.png
+!public/**/*.png
+.playwright-mcp/
+
+# stray Windows artifacts
+nul
