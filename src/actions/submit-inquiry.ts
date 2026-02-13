@@ -95,5 +95,8 @@ function getConfirmationMessage(serviceInterest: string, serviceDetail?: string)
     }
     return "Thank you. Our certification team will contact you within 24 hours to discuss your project.";
   }
+  if (serviceInterest === "Technology Solutions") {
+    return "Thank you. Our technology consulting team will reach out within 24 hours to discuss your operational technology needs.";
+  }
   return "Thank you. A member of our team will be in touch within 24 hours.";
 }

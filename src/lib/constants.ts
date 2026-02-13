@@ -13,6 +13,7 @@ export const NAV_ITEMS = [
       { label: "Safety & SMS", href: "/solutions/safety-sms", description: "SMS implementation, auditing, and compliance programs" },
       { label: "Technical Publications", href: "/solutions/publications", description: "Aviation manual development and revisions" },
       { label: "AI-Enhanced Services", href: "/solutions/ai-enhanced", description: "ROI with AI — automated compliance verification" },
+      { label: "Technology Solutions", href: "/solutions/technology", description: "Technology selection, implementation, and lifecycle support" },
     ],
   },
   {
@@ -86,6 +87,13 @@ export const SERVICE_CATEGORIES = [
     description: "ROI with AI. Automated guidance verification, precision compliance quoting, and AI-driven documentation quality assurance.",
     icon: "Brain",
     subServices: ["Regulatory Verification", "RAG Compliance", "Automated QA", "Conflict Detection"],
+  },
+  {
+    title: "Technology Solutions",
+    href: "/solutions/technology",
+    description: "End-to-end technology consulting: selection, implementation, training, and ongoing support for your entire operational stack.",
+    icon: "Monitor",
+    subServices: ["Technology Selection", "System Implementation", "Training & OJT", "Ongoing Support"],
   },
 ] as const;
 

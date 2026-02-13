@@ -10,6 +10,7 @@ import {
   Activity,
   FileText,
   Brain,
+  Monitor,
   ArrowRight,
 } from "lucide-react";
 
@@ -19,6 +20,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Activity,
   FileText,
   Brain,
+  Monitor,
 };
 
 export function ServicesGrid() {

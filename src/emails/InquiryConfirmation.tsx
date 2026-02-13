@@ -236,6 +236,16 @@ function getServiceContent(serviceInterest: string, serviceDetail?: string) {
     };
   }
 
+  if (serviceInterest === "Technology Solutions") {
+    return {
+      icon: "🖥️",
+      title: "Technology That Powers Your Operation",
+      description: "From flight planning to dispatch, safety systems to management dashboards — we help you select, implement, and optimize the technology backbone that keeps your operation running at peak efficiency.",
+      ctaUrl: "https://lcr.aero/solutions/technology",
+      ctaLabel: "Explore Technology Solutions",
+    };
+  }
+
   if (serviceInterest === "AI-Enhanced Services") {
     return {
       icon: "🤖",

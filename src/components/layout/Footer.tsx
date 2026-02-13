@@ -18,6 +18,7 @@ const SERVICE_LINKS = [
   { label: "Safety & SMS", href: "/solutions/safety-sms" },
   { label: "Technical Publications", href: "/solutions/publications" },
   { label: "AI-Enhanced Services", href: "/solutions/ai-enhanced" },
+  { label: "Technology Solutions", href: "/solutions/technology" },
 ] as const;
 
 export function Footer() {

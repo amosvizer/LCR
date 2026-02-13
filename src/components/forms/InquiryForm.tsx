@@ -48,6 +48,7 @@ const serviceOptions = [
   { value: "safety-sms", label: "Safety & SMS" },
   { value: "technical-publications", label: "Technical Publications" },
   { value: "ai-enhanced", label: "AI-Enhanced Services" },
+  { value: "technology-solutions", label: "Technology Solutions" },
   { value: "not-sure", label: "Not Sure \u2014 I Need Guidance" },
 ];
 
