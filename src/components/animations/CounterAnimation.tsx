@@ -20,12 +20,11 @@ export function CounterAnimation({
   isYear = false,
 }: CounterAnimationProps) {
   const ref = useRef<HTMLSpanElement>(null);
+  const hasAnimatedRef = useRef(false);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
-  const [hasAnimated, setHasAnimated] = useState(false);
 
   const motionValue = useMotionValue(0);
   const rounded = useTransform(motionValue, (latest) => {
-    // For integers, round to whole number. For decimals, keep one decimal.
     if (Number.isInteger(target)) {
       return Math.round(latest);
     }
@@ -35,17 +34,14 @@ export function CounterAnimation({
   const [displayValue, setDisplayValue] = useState(isYear ? target : 0);
 
   useEffect(() => {
-    if (isYear) return;
-    if (!isInView || hasAnimated) return;
+    if (isYear || !isInView || hasAnimatedRef.current) return;
 
-    setHasAnimated(true);
+    hasAnimatedRef.current = true;
 
     const controls = animate(motionValue, target, {
       duration,
-      type: "spring",
-      stiffness: 50,
-      damping: 20,
-      mass: 1,
+      type: "tween",
+      ease: "easeOut",
     });
 
     const unsubscribe = rounded.on("change", (latest) => {
@@ -56,7 +52,7 @@ export function CounterAnimation({
       controls.stop();
       unsubscribe();
     };
-  }, [isInView, hasAnimated, motionValue, rounded, target, duration, isYear]);
+  }, [isInView, motionValue, rounded, target, duration, isYear]);
 
   if (isYear) {
     return (
