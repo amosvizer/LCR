@@ -1,6 +1,10 @@
 "use server";
 
 import { z } from "zod";
+import { createClient } from "@/lib/supabase/server";
+import { resend, FROM_EMAIL, NOTIFICATION_EMAIL } from "@/lib/resend";
+import LeadNotification from "@/emails/LeadNotification";
+import InquiryConfirmation from "@/emails/InquiryConfirmation";
 
 const inquirySchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -19,23 +23,54 @@ export async function submitInquiry(data: InquiryFormData) {
   try {
     const validated = inquirySchema.parse(data);
 
-    // TODO: Connect to Supabase
-    // const supabase = await createClient();
-    // const { error } = await supabase.from("inquiries").insert({
-    //   full_name: validated.fullName,
-    //   company_name: validated.companyName,
-    //   email: validated.email,
-    //   phone: validated.phone || null,
-    //   service_interest: validated.serviceInterest,
-    //   service_detail: validated.serviceDetail || null,
-    //   project_details: validated.projectDetails || null,
-    //   referral_source: validated.referralSource || null,
-    // });
+    // Insert into Supabase
+    const supabase = await createClient();
+    const { error: dbError } = await supabase.from("inquiries").insert({
+      full_name: validated.fullName,
+      company_name: validated.companyName,
+      email: validated.email,
+      phone: validated.phone || null,
+      service_interest: validated.serviceInterest,
+      service_detail: validated.serviceDetail || null,
+      project_details: validated.projectDetails || null,
+      referral_source: validated.referralSource || null,
+    });
 
-    // TODO: Send emails via Resend
-    // await resend.emails.send({ ... });
+    if (dbError) {
+      console.error("Supabase insert error:", dbError);
+      return { success: false, message: "Something went wrong. Please try again or email us at info@lcr.aero." };
+    }
 
-    console.log("Inquiry submitted:", validated);
+    // Send emails via Resend (non-blocking — don't fail the submission if email fails)
+    if (process.env.RESEND_API_KEY) {
+      try {
+        await Promise.all([
+          resend.emails.send({
+            from: FROM_EMAIL,
+            to: NOTIFICATION_EMAIL,
+            subject: `New Inquiry: ${validated.companyName} — ${validated.serviceInterest}`,
+            react: LeadNotification({
+              ...validated,
+              submittedAt: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
+            }),
+          }),
+          resend.emails.send({
+            from: FROM_EMAIL,
+            to: validated.email,
+            subject: validated.serviceInterest === "Initial Certification"
+              ? "Thank You — Your Certification Inquiry Has Been Received"
+              : "Thank You — LCR Aero Group Will Be in Touch",
+            react: InquiryConfirmation({
+              fullName: validated.fullName,
+              serviceInterest: validated.serviceInterest,
+              serviceDetail: validated.serviceDetail,
+            }),
+          }),
+        ]);
+      } catch (emailError) {
+        console.error("Email send error (non-blocking):", emailError);
+      }
+    }
 
     return {
       success: true,

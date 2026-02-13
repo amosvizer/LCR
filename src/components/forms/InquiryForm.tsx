@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import { submitInquiry } from "@/actions/submit-inquiry";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,6 +14,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Send,
+  Loader2,
   User,
   Building2,
   Mail,
@@ -201,6 +203,7 @@ function SuccessScreen({ certType }: { certType?: string }) {
 export function InquiryForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -277,11 +280,58 @@ export function InquiryForm() {
     }
   }
 
-  function onSubmit(data: FormData) {
-    // eslint-disable-next-line no-console
-    console.log("Form submission:", data);
-    toast.success("Your inquiry has been submitted successfully.");
-    setIsSubmitted(true);
+  async function onSubmit(data: FormData) {
+    setIsSubmitting(true);
+    try {
+      // Map form field names to server action expected format
+      const serviceLabel =
+        serviceOptions.find((o) => o.value === data.serviceInterest)?.label ??
+        data.serviceInterest;
+
+      // Determine serviceDetail from the conditional step
+      let serviceDetail: string | undefined;
+      if (data.serviceInterest === "initial-certification" && data.certType) {
+        serviceDetail =
+          certTypeOptions.find((o) => o.value === data.certType)?.label ??
+          data.certType;
+      } else if (
+        data.serviceInterest === "operational-expansion" &&
+        data.changeType
+      ) {
+        serviceDetail =
+          changeTypeOptions.find((o) => o.value === data.changeType)?.label ??
+          data.changeType;
+      }
+
+      const referralLabel = data.referralSource
+        ? referralOptions.find((o) => o.value === data.referralSource)?.label ??
+          data.referralSource
+        : undefined;
+
+      const result = await submitInquiry({
+        fullName: data.fullName,
+        companyName: data.companyName,
+        email: data.email,
+        phone: data.phone || undefined,
+        serviceInterest: serviceLabel,
+        serviceDetail,
+        projectDetails: data.projectDetails || undefined,
+        referralSource: referralLabel,
+      });
+
+      if (result.success) {
+        toast.success(result.message);
+        setIsSubmitted(true);
+      } else {
+        toast.error(result.message);
+      }
+    } catch {
+      toast.error(
+        "Something went wrong. Please try again or email us at info@lcr.aero."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   const effectiveStep = getEffectiveStep();
@@ -567,10 +617,20 @@ export function InquiryForm() {
           {isLastStep ? (
             <Button
               type="submit"
-              className="gap-2 rounded-full bg-cyan px-8 py-5 font-semibold text-deep-blue transition-all hover:scale-[1.02] hover:bg-cyan-dark hover:shadow-lg hover:shadow-cyan/20"
+              disabled={isSubmitting}
+              className="gap-2 rounded-full bg-cyan px-8 py-5 font-semibold text-deep-blue transition-all hover:scale-[1.02] hover:bg-cyan-dark hover:shadow-lg hover:shadow-cyan/20 disabled:opacity-60"
             >
-              Submit Inquiry
-              <Send className="h-4 w-4" />
+              {isSubmitting ? (
+                <>
+                  Submitting...
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                </>
+              ) : (
+                <>
+                  Submit Inquiry
+                  <Send className="h-4 w-4" />
+                </>
+              )}
             </Button>
           ) : (
             <Button

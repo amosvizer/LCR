@@ -1,23 +1,41 @@
 "use client";
 
 import { useState } from "react";
+import { subscribeNewsletter } from "@/actions/subscribe-newsletter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 
 export function NewsletterForm({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
-    // TODO: Connect to server action
-    console.log("Newsletter subscription:", email);
-    setStatus("success");
-    setEmail("");
-    setTimeout(() => setStatus("idle"), 3000);
+    setStatus("loading");
+    try {
+      const formData = new FormData();
+      formData.append("email", email);
+      const result = await subscribeNewsletter(formData);
+
+      if (result.success) {
+        setStatus("success");
+        setMessage(result.message);
+        setEmail("");
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setMessage(result.message);
+        setTimeout(() => setStatus("idle"), 3000);
+      }
+    } catch {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   const isDark = variant === "dark";
@@ -42,15 +60,21 @@ export function NewsletterForm({ variant = "dark" }: { variant?: "dark" | "light
         <Button
           type="submit"
           size="sm"
-          className="h-10 rounded-full bg-cyan px-4 text-deep-blue hover:bg-cyan-dark"
+          disabled={status === "loading"}
+          className="h-10 rounded-full bg-cyan px-4 text-deep-blue hover:bg-cyan-dark disabled:opacity-60"
         >
-          <Send className="h-4 w-4" />
+          {status === "loading" ? (
+            <Loader2 className="h-4 w-4 animate-spin" />
+          ) : (
+            <Send className="h-4 w-4" />
+          )}
         </Button>
       </form>
       {status === "success" && (
-        <p className="mt-2 text-xs text-cyan">
-          Welcome to Regulatory Watch!
-        </p>
+        <p className="mt-2 text-xs text-cyan">{message}</p>
+      )}
+      {status === "error" && (
+        <p className="mt-2 text-xs text-orange">{message}</p>
       )}
     </div>
   );

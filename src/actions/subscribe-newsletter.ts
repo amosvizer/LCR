@@ -1,6 +1,9 @@
 "use server";
 
 import { z } from "zod";
+import { createClient } from "@/lib/supabase/server";
+import { resend, FROM_EMAIL } from "@/lib/resend";
+import NewsletterWelcome from "@/emails/NewsletterWelcome";
 
 const newsletterSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -11,15 +14,34 @@ export async function subscribeNewsletter(formData: FormData) {
     const email = formData.get("email") as string;
     const validated = newsletterSchema.parse({ email });
 
-    // TODO: Connect to Supabase
-    // const supabase = await createClient();
-    // const { error } = await supabase.from("newsletter_subscribers").insert({
-    //   email: validated.email,
-    // });
+    // Insert into Supabase
+    const supabase = await createClient();
+    const { error: dbError } = await supabase.from("newsletter_subscribers").insert({
+      email: validated.email,
+    });
 
-    // TODO: Send welcome email via Resend
+    if (dbError) {
+      // Handle duplicate email gracefully
+      if (dbError.code === "23505") {
+        return { success: true, message: "You're already subscribed to Regulatory Watch!" };
+      }
+      console.error("Supabase insert error:", dbError);
+      return { success: false, message: "Something went wrong. Please try again." };
+    }
 
-    console.log("Newsletter subscription:", validated.email);
+    // Send welcome email via Resend (non-blocking)
+    if (process.env.RESEND_API_KEY) {
+      try {
+        await resend.emails.send({
+          from: FROM_EMAIL,
+          to: validated.email,
+          subject: "Welcome to Regulatory Watch by LCR Aero Group",
+          react: NewsletterWelcome(),
+        });
+      } catch (emailError) {
+        console.error("Email send error (non-blocking):", emailError);
+      }
+    }
 
     return { success: true, message: "Welcome to Regulatory Watch! Check your email for confirmation." };
   } catch (error) {
