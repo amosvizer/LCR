@@ -117,6 +117,24 @@ export const teamMembers: TeamMember[] = [
     specialties: ["Airworthiness Regulatory & Safety Compliance", "Aviation Project Management"],
     bio: "51 years in aviation, including 31 years with the FAA. Expertise in Airworthiness Regulatory and Safety Compliance and Aviation Project Management.",
   },
+  {
+    name: "Lynn Richards",
+    title: "Maintenance",
+    image: "/images/people/lynn-richards.jpg",
+    yearsAviation: 42,
+    yearsFAA: 18,
+    specialties: ["Maintenance Operations", "Airworthiness Regulatory Compliance"],
+    bio: "42 years in aviation, including 18 years with the FAA. Expertise in Maintenance Operations and Airworthiness Regulatory Compliance.",
+  },
+  {
+    name: "Sherri Kelly",
+    title: "Cabin Inflight Operations",
+    image: "/images/people/sherri-kelly.jpg",
+    yearsAviation: 47,
+    yearsFAA: 25,
+    specialties: ["Cabin Inflight Operations", "Regulatory & Safety Compliance"],
+    bio: "47 years in aviation, including 25 years with the FAA. Expertise in Cabin Inflight Operations and Regulatory and Safety Compliance.",
+  },
 ];
 
 export const teamStats = {
