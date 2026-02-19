@@ -43,6 +43,8 @@ next-env.d.ts
 # screenshots & playwright artifacts
 *.png
 !public/**/*.png
+!src/app/icon.png
+!src/app/apple-icon.png
 .playwright-mcp/
 
 # stray Windows artifacts
