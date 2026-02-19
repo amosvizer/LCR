@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sheet";
 import { NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { trackCTAClick } from "@/lib/analytics";
 
 type NavChild = {
   readonly label: string;
@@ -250,6 +251,7 @@ export function Header() {
         <div className="hidden lg:block">
           <Link
             href="/contact"
+            onClick={() => trackCTAClick("request_consultation", "header")}
             className="inline-flex items-center rounded-full bg-cyan px-6 py-2.5 text-sm font-semibold text-deep-blue transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan/25 active:scale-[0.98]"
           >
             Request Consultation
@@ -306,7 +308,7 @@ export function Header() {
               <div className="border-t border-white/5 p-6">
                 <Link
                   href="/contact"
-                  onClick={closeMobile}
+                  onClick={() => { trackCTAClick("request_consultation", "mobile_menu"); closeMobile(); }}
                   className="flex w-full items-center justify-center rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-deep-blue transition-all duration-200 hover:shadow-lg hover:shadow-cyan/25"
                 >
                   Request Consultation

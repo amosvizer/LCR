@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ArrowRight, Mail } from "lucide-react";
+import { trackCTAClick } from "@/lib/analytics";
 
 interface CTASectionProps {
   headline?: string;
@@ -57,7 +58,7 @@ export function CTASection({
               size="lg"
               className="group rounded-full bg-cyan px-8 py-6 text-base font-semibold text-deep-blue transition-all hover:scale-[1.02] hover:bg-cyan-dark hover:shadow-lg hover:shadow-cyan/20"
             >
-              <Link href={ctaHref}>
+              <Link href={ctaHref} onClick={() => trackCTAClick("schedule_consultation", "cta_section")}>
                 {ctaText}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>

@@ -5,6 +5,7 @@ import { subscribeNewsletter } from "@/actions/subscribe-newsletter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send, Loader2 } from "lucide-react";
+import { trackFormSubmission } from "@/lib/analytics";
 
 export function NewsletterForm({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const [email, setEmail] = useState("");
@@ -22,6 +23,7 @@ export function NewsletterForm({ variant = "dark" }: { variant?: "dark" | "light
       const result = await subscribeNewsletter(formData);
 
       if (result.success) {
+        trackFormSubmission("newsletter");
         setStatus("success");
         setMessage(result.message);
         setEmail("");

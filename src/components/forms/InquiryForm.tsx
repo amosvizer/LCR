@@ -21,6 +21,7 @@ import {
   Phone,
   CheckCircle,
 } from "lucide-react";
+import { trackFormStep, trackFormSubmission, trackEvent } from "@/lib/analytics";
 
 // ---------- Schema ----------
 
@@ -205,6 +206,14 @@ export function InquiryForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStarted, setFormStarted] = useState(false);
+
+  function handleFormStart() {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackEvent({ action: "form_start", category: "engagement", form_name: "inquiry" });
+    }
+  }
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -260,6 +269,9 @@ export function InquiryForm() {
   async function handleNext() {
     const valid = await validateCurrentStep();
     if (!valid) return;
+
+    const stepNames = ["contact_info", "service_interest", "service_detail", "project_details", "referral_source"];
+    trackFormStep("inquiry", currentStep, stepNames[currentStep - 1]);
 
     if (currentStep < TOTAL_STEPS) {
       // If step 3 not needed and we are at step 2, skip to effective step 4 (actual step 3)
@@ -321,6 +333,7 @@ export function InquiryForm() {
       });
 
       if (result.success) {
+        trackFormSubmission("inquiry", { service_interest: serviceLabel });
         toast.success(result.message);
         setIsSubmitted(true);
       } else {
@@ -376,6 +389,7 @@ export function InquiryForm() {
                   id="fullName"
                   placeholder="John Smith"
                   {...form.register("fullName")}
+                  onFocus={handleFormStart}
                   className="h-11"
                 />
                 {form.formState.errors.fullName && (

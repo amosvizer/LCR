@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackCTAClick } from "@/lib/analytics";
 
 export function StickyCTA() {
   const [visible, setVisible] = useState(false);
@@ -36,6 +37,7 @@ export function StickyCTA() {
             </p>
             <Link
               href="/contact"
+              onClick={() => trackCTAClick("talk_to_expert", "sticky_cta")}
               className="flex-shrink-0 rounded-full bg-cyan px-5 py-2.5 text-sm font-semibold text-deep-blue transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan/25 active:scale-[0.98]"
             >
               Talk to an Expert
