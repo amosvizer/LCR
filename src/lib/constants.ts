@@ -11,6 +11,7 @@ export const NAV_ITEMS = [
       { label: "Certification Services", href: "/solutions/certification", description: "Initial certifications for Parts 121, 135, 145, and 137" },
       { label: "Operational Expansion", href: "/solutions/expansion", description: "New aircraft types, ETOPS, flag carrier transitions" },
       { label: "Safety & SMS", href: "/solutions/safety-sms", description: "SMS implementation, auditing, and compliance programs" },
+      { label: "Compliance Auditing", href: "/solutions/compliance-auditing", description: "FAA, IATA, and DoD independent compliance evaluations" },
       { label: "Technical Publications", href: "/solutions/publications", description: "Aviation manual development and revisions" },
       { label: "AI-Enhanced Services", href: "/solutions/ai-enhanced", description: "ROI with AI — automated compliance verification" },
       { label: "Technology Solutions", href: "/solutions/technology", description: "Technology selection, implementation, and lifecycle support" },
@@ -70,9 +71,16 @@ export const SERVICE_CATEGORIES = [
   {
     title: "Safety & SMS",
     href: "/solutions/safety-sms",
-    description: "SMS implementation and auditing for Parts 121, 135, and 145. IATA compliance. DoD compliance. Independent evaluations.",
+    description: "SMS manual development, SMS Data Collection Tool and SMS Statement of Compliance completions for parts 121, 135 and 145.",
     icon: "Activity",
     subServices: ["SMS Implementation", "Gap Analysis", "IOSA Audit Prep", "Safety Culture Assessment"],
+  },
+  {
+    title: "Regulatory Compliance Auditing",
+    href: "/solutions/compliance-auditing",
+    description: "FAA, IATA, and DOD regulatory compliance auditing. Independent customized evaluations.",
+    icon: "Scale",
+    subServices: ["FAA Compliance Audits", "IOSA Preparation", "DoD Evaluations", "Custom Audit Programs"],
   },
   {
     title: "Technical Publications",

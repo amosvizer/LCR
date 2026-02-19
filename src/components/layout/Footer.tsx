@@ -16,6 +16,7 @@ const SERVICE_LINKS = [
   { label: "Certification Services", href: "/solutions/certification" },
   { label: "Operational Expansion", href: "/solutions/expansion" },
   { label: "Safety & SMS", href: "/solutions/safety-sms" },
+  { label: "Compliance Auditing", href: "/solutions/compliance-auditing" },
   { label: "Technical Publications", href: "/solutions/publications" },
   { label: "AI-Enhanced Services", href: "/solutions/ai-enhanced" },
   { label: "Technology Solutions", href: "/solutions/technology" },

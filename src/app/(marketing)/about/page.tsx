@@ -198,7 +198,7 @@ export default function AboutPage() {
                     Meet Our Team
                   </h3>
                   <p className="mb-6 font-body text-base leading-relaxed text-slate">
-                    12 subject matter experts with 400+ combined years of
+                    14 subject matter experts with 400+ combined years of
                     aviation experience, including 230+ years of direct FAA
                     service. Meet the professionals who will lead your project.
                   </p>

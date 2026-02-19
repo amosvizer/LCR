@@ -12,6 +12,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Lawrence "Larry" Richards',
     title: "President & Program Manager",
+    image: "/images/people/larry-richards.jpg",
     yearsAviation: 50,
     yearsFAA: 26,
     specialties: ["Aviation Project Management", "Airworthiness Regulatory & Safety Compliance", "Safety Management Systems (SMS)"],
@@ -20,6 +21,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'William "Jeff" Weber',
     title: "Flight Operations",
+    image: "/images/people/jeff-weber.jpg",
     yearsAviation: 50,
     yearsFAA: 24,
     specialties: ["Aviation Project Management", "Regulatory & Safety Compliance", "Flight Operations"],
@@ -28,6 +30,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Tom Ronk",
     title: "Maintenance",
+    image: "/images/people/tom-ronk.jpg",
     yearsAviation: 42,
     yearsFAA: 29,
     specialties: ["Aviation Airworthiness", "Regulatory & Safety Compliance"],
@@ -36,22 +39,25 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Stefanie Greer",
     title: "LCR Business Accountant",
+    image: "/images/people/stefanie-greer.jpg",
     yearsAviation: 16,
     yearsFAA: null,
-    specialties: ["Small Business Accounting", "Aviation Operations"],
+    specialties: ["Small Business Accounting"],
     bio: "16 years in aviation-related operations. Expertise in small business accounting.",
   },
   {
     name: "Cindy Griffin",
     title: "Cabin Inflight",
+    image: "/images/people/cindy-griffin.jpg",
     yearsAviation: 42,
     yearsFAA: 15,
     specialties: ["Cabin Inflight Operations", "Regulatory & Safety Compliance"],
     bio: "42 years in aviation, including 15 years with the FAA. Expertise in Cabin Inflight Operations, Regulatory and Safety Compliance.",
   },
   {
-    name: "Lyneca Harvey",
+    name: "Lyncca Harvey",
     title: "Technical Publications",
+    image: "/images/people/lyncca-harvey.jpg",
     yearsAviation: 26,
     yearsFAA: null,
     specialties: ["Manual System Creation & Revisions", "FrameMaker Specialist"],
@@ -60,6 +66,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Greg Michael",
     title: "Flight Operations",
+    image: "/images/people/greg-michael.jpg",
     yearsAviation: 51,
     yearsFAA: 30,
     specialties: ["Flight Operations", "Regulatory & Safety Compliance", "Aviation Project Management"],
@@ -68,14 +75,16 @@ export const teamMembers: TeamMember[] = [
   {
     name: 'Thomas "Tommy" Clemmons',
     title: "Flight Operations",
-    yearsAviation: 50,
+    image: "/images/people/thomas-clemmons.jpg",
+    yearsAviation: 52,
     yearsFAA: 22,
-    specialties: ["Flight Operations", "Regulatory & Safety Compliance", "Aviation Project Management"],
-    bio: "50 years in aviation, including 22 years with the FAA. Expertise in Flight Operations, Regulatory and Safety Compliance, and Aviation Project Management.",
+    specialties: ["Flight Operations", "Regulatory & Safety Compliance", "Aviation Project Management", "Recipient of the Wright Brothers Master Pilot Award"],
+    bio: "52 years in aviation, including 22 years with the FAA. Expertise in Flight Operations, Regulatory and Safety Compliance, and Aviation Project Management.",
   },
   {
     name: "Glenn Gosnell",
     title: "Flight Ops, HAZMAT, Dispatch",
+    image: "/images/people/glenn-gosnell.jpg",
     yearsAviation: 40,
     yearsFAA: 16,
     specialties: ["Flight Operations", "Dispatch & Flight Following", "Regulatory & Safety Compliance"],
@@ -84,6 +93,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Steve Jenkinson",
     title: "Dispatch / Flight Following",
+    image: "/images/people/steve-jenkinson.jpg",
     yearsAviation: 28,
     yearsFAA: null,
     specialties: ["Dispatch & Flight Following", "Regulatory & Safety Compliance", "Aviation Project Management"],
@@ -92,6 +102,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Phil Bolyard",
     title: "Maintenance",
+    image: "/images/people/phil-bolyard.jpg",
     yearsAviation: 28,
     yearsFAA: 19,
     specialties: ["Airworthiness Regulatory & Safety Compliance", "Aviation Project Management", "Safety Management Systems (SMS)"],
@@ -100,6 +111,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Pete Yiakos",
     title: "Maintenance",
+    image: "/images/people/pete-yiakos.jpg",
     yearsAviation: 51,
     yearsFAA: 31,
     specialties: ["Airworthiness Regulatory & Safety Compliance", "Aviation Project Management"],
@@ -110,6 +122,6 @@ export const teamMembers: TeamMember[] = [
 export const teamStats = {
   combinedYearsAviation: "400+",
   combinedYearsFAA: "230+",
-  totalExperts: "12",
+  totalExperts: "14",
   disciplinesCovered: "All Operational Disciplines",
 };

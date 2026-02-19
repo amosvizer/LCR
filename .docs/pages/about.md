@@ -66,7 +66,7 @@ Display each team member as a professional profile card. Desktop: 3 or 4 per row
 
 **Pete Yiakos — Maintenance:** 51 years in aviation, including 31 years with the FAA. Expertise in Airworthiness Regulatory and Safety Compliance and Aviation Project Management.
 
-**Aggregate Team Stats Display:** Above the team grid, display a stats bar showing: “400+ Combined Years of Aviation Experience | 230+ Combined Years of FAA Service | 12 Subject Matter Experts | All Operational Disciplines Covered”
+**Aggregate Team Stats Display:** Above the team grid, display a stats bar showing: “400+ Combined Years of Aviation Experience | 230+ Combined Years of FAA Service | 14 Subject Matter Experts | All Operational Disciplines Covered”
 
 ## 5.12 CASE STUDIES & CLIENT SUCCESS (/about/case-studies)
 
