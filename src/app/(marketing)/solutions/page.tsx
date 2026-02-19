@@ -11,6 +11,7 @@ import {
   FileText,
   Brain,
   Monitor,
+  Scale,
   ArrowRight,
 } from "lucide-react";
 
@@ -27,6 +28,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   FileText,
   Brain,
   Monitor,
+  Scale,
 };
 
 export default function SolutionsPage() {
