@@ -387,7 +387,7 @@ export function InquiryForm() {
                 </Label>
                 <Input
                   id="fullName"
-                  placeholder="John Smith"
+                  placeholder="Wilbur Wright"
                   {...form.register("fullName")}
                   onFocus={handleFormStart}
                   className="h-11"
@@ -409,7 +409,7 @@ export function InquiryForm() {
                 </Label>
                 <Input
                   id="companyName"
-                  placeholder="Acme Aviation LLC"
+                  placeholder="TwoChi LLC"
                   {...form.register("companyName")}
                   className="h-11"
                 />
@@ -431,7 +431,7 @@ export function InquiryForm() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="john@acmeaviation.com"
+                  placeholder="hello@twochi.com"
                   {...form.register("email")}
                   className="h-11"
                 />
@@ -456,7 +456,7 @@ export function InquiryForm() {
                 <Input
                   id="phone"
                   type="tel"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+1 (407) 479-3799"
                   {...form.register("phone")}
                   className="h-11"
                 />
