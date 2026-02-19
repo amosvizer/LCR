@@ -16,10 +16,14 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+
 export const metadata: Metadata = {
   title: "AI-Enhanced Certification: ROI with AI",
   description:
     "Purpose-built AI tools for aviation certification: automated guidance verification, RAG compliance quoting, rapid manual generation, and conflict detection.",
+  alternates: { canonical: "/solutions/ai-enhanced" },
 };
 
 const SECTIONS = [
@@ -94,6 +98,8 @@ const SECTIONS = [
 export default function AiEnhancedPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "AI-Enhanced Services", href: "/solutions/ai-enhanced" }])} />
+      <JsonLd data={serviceSchema({ name: "AI-Enhanced Certification Services", description: "Purpose-built AI tools for aviation certification: automated guidance verification, RAG compliance quoting, rapid manual generation, and conflict detection.", url: "/solutions/ai-enhanced" })} />
       <PageHero
         eyebrow="Achieving High-Confidence Regulatory Acceptance"
         title="AI-Enhanced Certification: ROI with AI"

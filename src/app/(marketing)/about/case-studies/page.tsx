@@ -7,11 +7,14 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { caseStudies } from "@/data/services";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, AlertTriangle, Compass } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Client Success Stories",
   description:
     "See how LCR Aero Group has helped aviation operators achieve their certification and compliance objectives. Real results from former FAA inspectors.",
+  alternates: { canonical: "/about/case-studies" },
 };
 
 const certTypeFilters = ["All", "Part 121", "Part 135", "Part 145", "Part 137"];
@@ -19,6 +22,7 @@ const certTypeFilters = ["All", "Part 121", "Part 135", "Part 145", "Part 137"];
 export default function CaseStudiesPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "About", href: "/about" }, { name: "Case Studies", href: "/about/case-studies" }])} />
       <PageHero
         eyebrow="Case Studies"
         title="Client Success Stories"

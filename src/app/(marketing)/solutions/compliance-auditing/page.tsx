@@ -12,12 +12,34 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Regulatory Compliance Auditing — FAA, IATA & DoD",
   description:
     "Independent regulatory compliance auditing for aviation operators. FAA, IATA/IOSA, and DoD evaluations by former FAA inspectors. Customized audit programs with actionable findings.",
+  alternates: { canonical: "/solutions/compliance-auditing" },
 };
+
+const AUDIT_FAQS = [
+  {
+    question: "What does an FAA compliance audit cover?",
+    answer: "A comprehensive FAA compliance audit evaluates your operations, maintenance, training, and safety programs against current 14 CFR requirements and FAA guidance. This includes reviewing manuals, procedures, training records, maintenance documentation, Operations Specifications compliance, and all associated program areas for Parts 121, 135, 145, and 137.",
+  },
+  {
+    question: "How often should we conduct an internal compliance audit?",
+    answer: "Aviation operators should conduct comprehensive internal compliance audits at least annually. Semi-annual audits are recommended for complex operations or operators with recent findings. Continuous monitoring programs — part of a robust SMS — provide ongoing compliance assurance between formal audits.",
+  },
+  {
+    question: "What is IATA IOSA?",
+    answer: "IATA IOSA (Operational Safety Audit) is an internationally recognized and accepted evaluation system designed to assess the operational management and control systems of an airline. It covers eight operational areas and is a requirement for IATA membership. IOSA registration signals operational excellence and is recognized by regulators and insurance providers worldwide.",
+  },
+  {
+    question: "What happens when audit findings are identified?",
+    answer: "When findings are identified, LCR provides a detailed corrective action plan with specific recommendations, implementation timelines, and responsible parties. Findings are categorized by severity and compliance risk. Our team can assist with implementing corrective actions, updating documentation, and conducting follow-up verification to ensure closure before regulatory consequences arise.",
+  },
+];
 
 const AUDIT_TYPES = [
   {
@@ -116,6 +138,9 @@ const DIFFERENTIATORS = [
 export default function ComplianceAuditingPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "Compliance Auditing", href: "/solutions/compliance-auditing" }])} />
+      <JsonLd data={serviceSchema({ name: "Regulatory Compliance Auditing", description: "Independent regulatory compliance auditing for aviation operators. FAA, IATA/IOSA, and DoD evaluations by former FAA inspectors.", url: "/solutions/compliance-auditing" })} />
+      <JsonLd data={faqSchema(AUDIT_FAQS)} />
       <PageHero
         eyebrow="Regulatory Compliance Auditing"
         title="Independent Regulatory Compliance Auditing"

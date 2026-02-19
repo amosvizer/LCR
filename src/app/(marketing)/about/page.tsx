@@ -14,11 +14,14 @@ import {
   Users,
   Trophy,
 } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "About LCR Aero Group",
   description:
     "Since 2013, LCR Aero Group has provided unparalleled certification, regulatory, and safety compliance consulting to aviation organizations worldwide. Former FAA inspectors. AI-enhanced precision.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [
@@ -57,6 +60,7 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "About", href: "/about" }])} />
       <PageHero
         eyebrow="About Us"
         title="About LCR Aero Group"

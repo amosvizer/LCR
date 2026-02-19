@@ -7,17 +7,22 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { industryPages } from "@/data/services";
 import { ArrowRight } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
 
 const industry = industryPages.find((p) => p.slug === "cargo-charter")!;
 
 export const metadata: Metadata = {
   title: industry.title,
   description: industry.description,
+  alternates: { canonical: "/industries/cargo-charter" },
 };
 
 export default function CargoCharterPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries" }, { name: "Cargo & Charter", href: "/industries/cargo-charter" }])} />
+      <JsonLd data={serviceSchema({ name: "Cargo Airline & Charter Operator Solutions", description: industry.description, url: "/industries/cargo-charter" })} />
       <PageHero
         eyebrow="Industries"
         title={industry.h1}

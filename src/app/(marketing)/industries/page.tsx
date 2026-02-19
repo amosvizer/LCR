@@ -8,15 +8,20 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { industryPages } from "@/data/services";
 import { ArrowRight } from "lucide-react";
 
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
+
 export const metadata: Metadata = {
   title: "Industries We Serve",
   description:
     "LCR Aero Group provides aviation certification and compliance consulting across commercial airlines, cargo operators, MRO facilities, and agricultural aviation.",
+  alternates: { canonical: "/industries" },
 };
 
 export default function IndustriesPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries" }])} />
       <PageHero
         eyebrow="Industries"
         title="Industries We Serve"

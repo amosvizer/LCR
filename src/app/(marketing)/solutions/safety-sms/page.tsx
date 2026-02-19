@@ -3,12 +3,34 @@ import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Shield, Search, BarChart3, Megaphone, CheckCircle2 } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Safety Management Systems & Compliance Programs",
   description:
     "SMS implementation, gap analysis, IOSA audit preparation, and safety culture programs for Parts 121, 135, and 145 operators. Built on ICAO four-pillar framework.",
+  alternates: { canonical: "/solutions/safety-sms" },
 };
+
+const SMS_FAQS = [
+  {
+    question: "What is a Safety Management System (SMS)?",
+    answer: "An SMS is a systematic approach to managing safety risk in aviation operations. Built on the ICAO four-pillar framework — Safety Policy, Safety Risk Management, Safety Assurance, and Safety Promotion — it provides a structured process for identifying hazards, assessing risks, implementing mitigations, and continuously monitoring safety performance.",
+  },
+  {
+    question: "Is SMS required for Part 121 operators?",
+    answer: "Yes. Under 14 CFR Part 5, all Part 121 air carriers are required to implement a Safety Management System. While not yet mandated for Part 135 and Part 145 operators, SMS is increasingly expected by the FAA and is required for IATA membership and IOSA certification. Proactive SMS implementation demonstrates safety leadership and can expedite regulatory processes.",
+  },
+  {
+    question: "What is an IOSA audit?",
+    answer: "The IATA Operational Safety Audit (IOSA) is an internationally recognized evaluation system for airlines. It assesses operational management and control systems across eight disciplines. IOSA registration is a requirement for IATA membership and is recognized by regulatory authorities worldwide as a benchmark for airline safety.",
+  },
+  {
+    question: "How long does SMS implementation take?",
+    answer: "A comprehensive SMS implementation typically takes 4 to 8 weeks, depending on the size and complexity of your operation. This includes gap analysis, policy development, risk management procedures, safety assurance programs, and safety promotion materials. LCR's team of former FAA inspectors ensures your SMS meets both regulatory requirements and operational best practices.",
+  },
+];
 
 const ICAO_PILLARS = [
   {
@@ -52,6 +74,9 @@ const SMS_SERVICES = [
 export default function SafetySmsPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "Safety & SMS", href: "/solutions/safety-sms" }])} />
+      <JsonLd data={serviceSchema({ name: "Safety Management Systems & Compliance Programs", description: "SMS implementation, gap analysis, IOSA audit preparation, and safety culture programs for Parts 121, 135, and 145 operators.", url: "/solutions/safety-sms" })} />
+      <JsonLd data={faqSchema(SMS_FAQS)} />
       <PageHero
         eyebrow="Safety & SMS"
         title="Safety Management Systems & Compliance Programs"

@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/solutions/publications",
     "/solutions/ai-enhanced",
     "/solutions/technology",
+    "/solutions/compliance-auditing",
     "/industries",
     "/industries/commercial",
     "/industries/cargo-charter",

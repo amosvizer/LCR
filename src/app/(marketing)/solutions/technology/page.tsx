@@ -20,10 +20,14 @@ import {
   Check,
 } from "lucide-react";
 
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+
 export const metadata: Metadata = {
   title: "Technology Solutions — Selection, Implementation & Lifecycle Support",
   description:
     "End-to-end operational technology consulting for aviation: system selection, implementation, training, OJT, and ongoing support. A true turnkey solution from LCR Aero Group.",
+  alternates: { canonical: "/solutions/technology" },
 };
 
 const TECHNOLOGY_DOMAINS = [
@@ -134,6 +138,8 @@ const COMPARISON = {
 export default function TechnologyPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "Technology Solutions", href: "/solutions/technology" }])} />
+      <JsonLd data={serviceSchema({ name: "Technology Solutions — Selection, Implementation & Lifecycle Support", description: "End-to-end operational technology consulting for aviation: system selection, implementation, training, OJT, and ongoing support.", url: "/solutions/technology" })} />
       <PageHero
         eyebrow="Technology Solutions"
         title="Technology Selection, Implementation & Lifecycle Support"

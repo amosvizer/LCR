@@ -7,12 +7,38 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { CERTIFICATION_PHASES } from "@/lib/constants";
 import { ArrowRight } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "FAA Air Carrier & Air Agency Certification",
   description:
     "Expert guidance through the FAA 5-Phase certification process for Parts 121, 135, 145, and 137. Former FAA inspectors with 95%+ first-time DCT acceptance.",
+  alternates: { canonical: "/solutions/certification" },
 };
+
+const CERT_FAQS = [
+  {
+    question: "What is the FAA 5-Phase certification process?",
+    answer: "The FAA 5-Phase process is the structured pathway to obtaining an air carrier or air agency certificate. The phases are: (1) Pre-Application — initial inquiry and pre-assessment, (2) Formal Application — submitting the application and required documentation, (3) Design Assessment — FAA review of manuals, procedures, and organizational structure, (4) Performance Assessment — proving runs, evaluations, and operational demonstrations, and (5) Administrative — final certificate issuance and OpSpecs approval.",
+  },
+  {
+    question: "How long does FAA Part 121 certification take?",
+    answer: "Part 121 air carrier certification typically takes 18 to 24 months from initial application to certificate issuance. The timeline depends on the complexity of your operation, the quality of your documentation, and FAA workload. With expert guidance and proper DCT preparation, some certifications have been completed ahead of schedule.",
+  },
+  {
+    question: "What is a Data Collection Tool (DCT)?",
+    answer: "The Data Collection Tool (DCT) is the FAA's standardized document package that applicants submit during the certification process. It contains all required manuals, procedures, training programs, and compliance documentation. A well-prepared DCT is critical — LCR Aero Group maintains a 95%+ first-time DCT acceptance rate, meaning submissions are approved without requiring revision.",
+  },
+  {
+    question: "What is the difference between Part 121 and Part 135 certification?",
+    answer: "Part 121 governs scheduled air carrier operations (airlines), while Part 135 covers on-demand charter and commuter operations. Part 121 has more stringent requirements for crew training, maintenance programs, and operational control. Part 135 offers more operational flexibility but still requires comprehensive safety and compliance programs. The choice depends on your business model, aircraft size, and route structure.",
+  },
+  {
+    question: "What does a 95% DCT acceptance rate mean?",
+    answer: "A 95%+ DCT acceptance rate means that more than 95 out of 100 Data Collection Tool submissions prepared by LCR Aero Group are accepted by the FAA on the first review, without requiring corrections or resubmission. The industry average is significantly lower. This high acceptance rate saves clients months of delays and demonstrates the precision of LCR's documentation process.",
+  },
+];
 
 const CERTIFICATION_TYPES = [
   {
@@ -48,6 +74,9 @@ const CERTIFICATION_TYPES = [
 export default function CertificationPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "Certification Services", href: "/solutions/certification" }])} />
+      <JsonLd data={serviceSchema({ name: "FAA Air Carrier & Air Agency Certification", description: "Expert guidance through the FAA 5-Phase certification process for Parts 121, 135, 145, and 137. Former FAA inspectors with 95%+ first-time DCT acceptance.", url: "/solutions/certification" })} />
+      <JsonLd data={faqSchema(CERT_FAQS)} />
       <PageHero
         eyebrow="Certification Services"
         title="FAA Air Carrier & Air Agency Certification"

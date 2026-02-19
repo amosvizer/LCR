@@ -7,17 +7,22 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 import { industryPages } from "@/data/services";
 import { ArrowRight } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
 
 const industry = industryPages.find((p) => p.slug === "commercial")!;
 
 export const metadata: Metadata = {
   title: industry.title,
   description: industry.description,
+  alternates: { canonical: "/industries/commercial" },
 };
 
 export default function CommercialPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries" }, { name: "Commercial Airlines", href: "/industries/commercial" }])} />
+      <JsonLd data={serviceSchema({ name: "Commercial Airline Certification & Compliance", description: industry.description, url: "/industries/commercial" })} />
       <PageHero
         eyebrow="Industries"
         title={industry.h1}

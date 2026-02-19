@@ -15,10 +15,14 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
+
 export const metadata: Metadata = {
   title: "Aviation Certification & Compliance Solutions",
   description:
     "End-to-end FAA certification consulting, regulatory compliance, safety management, and AI-enhanced documentation services from former FAA inspectors.",
+  alternates: { canonical: "/solutions" },
 };
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -34,6 +38,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
 export default function SolutionsPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }])} />
       <PageHero
         eyebrow="Solutions"
         title="Aviation Certification & Compliance Solutions"

@@ -4,11 +4,14 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { BookOpen, Bell, FileText, Video, HelpCircle } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Aviation Certification Knowledge Hub",
   description:
     "Regulatory updates, certification guides, toolkits, and FAA process explainers from LCR Aero Group's team of former FAA inspectors. Coming soon.",
+  alternates: { canonical: "/knowledge" },
 };
 
 const plannedFeatures = [
@@ -41,6 +44,7 @@ const plannedFeatures = [
 export default function KnowledgeHubPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Knowledge Hub", href: "/knowledge" }])} />
       <PageHero
         eyebrow="Knowledge Hub"
         title="Aviation Certification Knowledge Hub"

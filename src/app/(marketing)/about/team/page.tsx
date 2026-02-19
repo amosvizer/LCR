@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/dialog";
 import { Clock, Shield, Award } from "lucide-react";
 import Image from "next/image";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, personSchema } from "@/lib/schemas";
 
 function getInitials(name: string): string {
   const parts = name.replace(/["']/g, "").split(" ");
@@ -36,6 +38,19 @@ export default function TeamPage() {
 
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "About", href: "/about" }, { name: "Expert Team", href: "/about/team" }])} />
+      {teamMembers.map((member) => (
+        <JsonLd
+          key={member.name}
+          data={personSchema({
+            name: member.name,
+            title: member.title,
+            bio: member.bio,
+            specialties: member.specialties,
+            image: member.image,
+          })}
+        />
+      ))}
       <PageHero
         eyebrow="Our Team"
         title="Our Team of Aviation Experts"
@@ -78,7 +93,7 @@ export default function TeamPage() {
                     <div className="relative mb-4 h-24 w-24 overflow-hidden rounded-full ring-2 ring-aero-silver shadow-md transition-all duration-300 group-hover:ring-cyan/40 group-hover:shadow-lg group-hover:shadow-cyan/10">
                       <Image
                         src={member.image}
-                        alt={member.name}
+                        alt={`${member.name}, ${member.title} at LCR Aero Group`}
                         fill
                         className="object-cover"
                         sizes="96px"
@@ -154,7 +169,7 @@ export default function TeamPage() {
                     <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full ring-2 ring-cyan/30 shadow-lg">
                       <Image
                         src={selectedMember.image}
-                        alt={selectedMember.name}
+                        alt={`${selectedMember.name}, ${selectedMember.title} at LCR Aero Group`}
                         fill
                         className="object-cover"
                         sizes="80px"

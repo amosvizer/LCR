@@ -8,12 +8,34 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Operational Expansion & Major Change Projects",
   description:
     "Expert management of FAA major change projects: new aircraft types, ETOPS, extended overwater, CPDLC, SMS implementation, and operational transitions.",
+  alternates: { canonical: "/solutions/expansion" },
 };
+
+const EXPANSION_FAQS = [
+  {
+    question: "What is a Major Change Process Document (MCPD)?",
+    answer: "The MCPD is a structured project plan that outlines all steps required for a major operational change, such as adding a new aircraft type or obtaining ETOPS authorization. It follows the same 5-Phase framework as initial certification and coordinates between the operator, LCR's subject matter experts, and the FAA Flight Standards District Office (FSDO).",
+  },
+  {
+    question: "What is ETOPS authorization?",
+    answer: "ETOPS (Extended Operations) authorization allows twin-engine aircraft to fly routes that take them more than 60 minutes from an adequate airport. It requires specialized maintenance programs, dispatch procedures, crew training, and a Configuration, Maintenance, and Procedures (CMP) document that meets the requirements of 14 CFR 121.374.",
+  },
+  {
+    question: "How long does it take to add a new aircraft type?",
+    answer: "Adding a new aircraft type to your Operations Specifications typically takes 90 to 180 days. The timeline depends on the complexity of the aircraft, the extent of manual revisions required, crew training needs, and FAA FSDO scheduling. LCR has completed fleet additions as quickly as 2 weeks ahead of schedule.",
+  },
+  {
+    question: "What is the difference between Domestic, Flag, and Supplemental operations?",
+    answer: "Domestic operations are conducted entirely within the contiguous United States. Flag operations include international routes or routes between the US mainland and its territories. Supplemental operations are non-scheduled (charter) flights that may be domestic or international. Each type has different regulatory requirements for crew qualifications, fuel reserves, and operational procedures.",
+  },
+];
 
 const EXPANSION_SERVICES = [
   {
@@ -75,6 +97,9 @@ const EXPANSION_SERVICES = [
 export default function ExpansionPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "Operational Expansion", href: "/solutions/expansion" }])} />
+      <JsonLd data={serviceSchema({ name: "Operational Expansion & Major Change Projects", description: "Expert management of FAA major change projects: new aircraft types, ETOPS, extended overwater, CPDLC, SMS implementation, and operational transitions.", url: "/solutions/expansion" })} />
+      <JsonLd data={faqSchema(EXPANSION_FAQS)} />
       <PageHero
         eyebrow="Operational Expansion"
         title="Operational Expansion & Major Change Projects"

@@ -4,16 +4,20 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { InquiryForm } from "@/components/forms/InquiryForm";
 import { Mail, Clock, Shield } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Let's Talk About Your Project",
   description:
     "Contact LCR Aero Group to discuss your aviation certification, compliance, or safety consulting needs. Our team of former FAA inspectors responds within 24 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }])} />
       <PageHero
         eyebrow="Contact"
         title="Let's Talk About Your Project"

@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "LCR Aero Group | Aviation Certification Consulting",
     description:
       "Former FAA inspectors delivering AI-enhanced aviation certification consulting. 95%+ first-time DCT acceptance rate.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",

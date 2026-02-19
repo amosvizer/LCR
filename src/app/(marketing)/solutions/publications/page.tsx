@@ -3,11 +3,14 @@ import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { FileText, ClipboardCheck, RefreshCw } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Aviation Manual Development & Technical Publications",
   description:
     "Complete aviation manual development, revision, and compliance verification. GOM, FOM, GMM, training manuals, and all required Part 121/135/145 documentation.",
+  alternates: { canonical: "/solutions/publications" },
 };
 
 const MANUALS = [
@@ -69,6 +72,8 @@ const PROCESS_STEPS = [
 export default function PublicationsPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "Technical Publications", href: "/solutions/publications" }])} />
+      <JsonLd data={serviceSchema({ name: "Aviation Manual Development & Technical Publications", description: "Complete aviation manual development, revision, and compliance verification for all Part 121/135/145 documentation.", url: "/solutions/publications" })} />
       <PageHero
         eyebrow="Technical Publications"
         title="Aviation Manual Development & Technical Publications"
