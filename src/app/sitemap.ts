@@ -25,10 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/knowledge",
   ];
 
+  const hubPages = ["/solutions", "/industries"];
   return staticPages.map((route) => ({
     url: `${SITE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route.split("/").length <= 2 ? 0.8 : 0.6,
+    lastModified: new Date("2026-02-18"),
+    changeFrequency: (route === "" || hubPages.includes(route) ? "weekly" : "monthly") as "weekly" | "monthly",
+    priority: route === "" ? 1.0 : route.split("/").length <= 2 ? 0.9 : 0.7,
   }));
 }

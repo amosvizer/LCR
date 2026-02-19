@@ -4,7 +4,26 @@ import { CTASection } from "@/components/sections/CTASection";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { FileText, ClipboardCheck, RefreshCw } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
+
+const PUBLICATIONS_FAQS = [
+  {
+    question: "What manuals are required for FAA Part 121 certification?",
+    answer: "Part 121 operators must develop and maintain several key manuals including a General Operations Manual (GOM), Flight Operations Manual (FOM), General Maintenance Manual (GMM), training program manuals for all disciplines, a Minimum Equipment List (MEL) program, Cabin Safety/Inflight Manual, HAZMAT program documentation, and an Emergency Response Plan (ERP). Each manual must comply with the applicable sections of 14 CFR and be accepted by the FAA before operations can begin.",
+  },
+  {
+    question: "How long does aviation manual development take?",
+    answer: "Comprehensive manual development for a new air carrier typically takes 3 to 6 months, depending on the scope and complexity of the operation. For existing operators, individual manual revisions can be completed in 2 to 4 weeks. LCR's AI-enhanced tools accelerate the process by automating regulatory cross-referencing and compliance verification, reducing development time while maintaining accuracy.",
+  },
+  {
+    question: "What is a compliance matrix in aviation manuals?",
+    answer: "A compliance matrix is a detailed cross-reference document that maps every regulatory requirement in 14 CFR to the specific section, page, and paragraph in your manuals where that requirement is addressed. It demonstrates to the FAA that your documentation comprehensively covers all applicable regulations and is a critical component of the Data Collection Tool (DCT) submission.",
+  },
+  {
+    question: "Can existing manuals be updated instead of rewritten?",
+    answer: "Yes. LCR specializes in both new manual development and revision of existing documentation. We perform a thorough gap analysis to identify areas where your current manuals fall short of regulatory requirements or industry best practices, then revise only what needs updating. This targeted approach is faster and more cost-effective than starting from scratch.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Aviation Manual Development & Technical Publications",
@@ -74,6 +93,7 @@ export default function PublicationsPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "Technical Publications", href: "/solutions/publications" }])} />
       <JsonLd data={serviceSchema({ name: "Aviation Manual Development & Technical Publications", description: "Complete aviation manual development, revision, and compliance verification for all Part 121/135/145 documentation.", url: "/solutions/publications" })} />
+      <JsonLd data={faqSchema(PUBLICATIONS_FAQS)} />
       <PageHero
         eyebrow="Technical Publications"
         title="Aviation Manual Development & Technical Publications"

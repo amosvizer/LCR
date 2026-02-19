@@ -8,7 +8,26 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { industryPages } from "@/data/services";
 import { ArrowRight } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
+
+const COMMERCIAL_FAQS = [
+  {
+    question: "How long does Part 121 air carrier certification take?",
+    answer: "Part 121 certification typically takes 18 to 24 months from pre-application through certificate issuance. The timeline depends on the complexity of your proposed operation, aircraft fleet, route structure, and the quality of your documentation package. With experienced consulting guidance, some certifications have been completed ahead of schedule.",
+  },
+  {
+    question: "What is the difference between domestic, flag, and supplemental operations?",
+    answer: "Domestic operations are conducted entirely within the contiguous United States. Flag operations include international routes or routes between the US mainland and its territories. Supplemental operations are non-scheduled (charter) flights, either domestic or international. Each type has different regulatory requirements for crew qualifications, fuel reserves, and operational procedures under Part 121.",
+  },
+  {
+    question: "What does ETOPS authorization allow?",
+    answer: "ETOPS (Extended Operations) authorization allows twin-engine aircraft to fly routes that take them more than 60 minutes from a suitable airport. It requires specialized maintenance programs, dispatch procedures, crew training, and a Configuration, Maintenance, and Procedures (CMP) document meeting 14 CFR 121.374 requirements. ETOPS enables more direct transatlantic and transpacific routing.",
+  },
+  {
+    question: "What is IOSA certification for airlines?",
+    answer: "IOSA (IATA Operational Safety Audit) is an internationally recognized evaluation system that assesses airline operational management and control systems across eight disciplines. IOSA registration is required for IATA membership and is recognized by regulatory authorities worldwide as a benchmark for airline safety and operational excellence.",
+  },
+];
 
 const industry = industryPages.find((p) => p.slug === "commercial")!;
 
@@ -23,6 +42,7 @@ export default function CommercialPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries" }, { name: "Commercial Airlines", href: "/industries/commercial" }])} />
       <JsonLd data={serviceSchema({ name: "Commercial Airline Certification & Compliance", description: industry.description, url: "/industries/commercial" })} />
+      <JsonLd data={faqSchema(COMMERCIAL_FAQS)} />
       <PageHero
         eyebrow="Industries"
         title={industry.h1}

@@ -8,7 +8,26 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { industryPages } from "@/data/services";
 import { ArrowRight } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
+
+const CARGO_FAQS = [
+  {
+    question: "What certifications do cargo airlines need?",
+    answer: "Cargo airlines operating under Part 121 need the same base air carrier certificate as passenger airlines, plus additional authorizations for hazardous materials (HAZMAT) handling, cargo-specific security programs, and potentially DoD (Department of Defense) approval for military contract flights. Part 135 cargo operators have a streamlined but still comprehensive certification path.",
+  },
+  {
+    question: "What is a HAZMAT program in aviation?",
+    answer: "An aviation HAZMAT (Hazardous Materials) program is a comprehensive set of procedures, training requirements, and documentation governing the acceptance, handling, storage, and transport of dangerous goods by air. It must comply with 49 CFR Parts 171-180 and ICAO Technical Instructions. All personnel involved in cargo acceptance must receive HAZMAT training and recurrent updates.",
+  },
+  {
+    question: "Can charter operators hold both Part 121 and Part 135 certificates?",
+    answer: "Yes, some operators hold dual certificates to serve different market segments. Part 121 governs scheduled or large-aircraft operations, while Part 135 covers on-demand charter and commuter operations with smaller aircraft. Each certificate has distinct operational, training, and maintenance requirements. LCR has experience guiding operators through both certification processes simultaneously.",
+  },
+  {
+    question: "What is DoD air carrier approval?",
+    answer: "DoD (Department of Defense) approval allows commercial airlines to carry military passengers, cargo, and mail under government contracts. The approval process involves a comprehensive evaluation of your operations, maintenance, safety programs, and security procedures by the DoD Air Carrier Survey and Analysis Office. LCR assists with preparation and compliance documentation for DoD evaluations.",
+  },
+];
 
 const industry = industryPages.find((p) => p.slug === "cargo-charter")!;
 
@@ -23,6 +42,7 @@ export default function CargoCharterPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries" }, { name: "Cargo & Charter", href: "/industries/cargo-charter" }])} />
       <JsonLd data={serviceSchema({ name: "Cargo Airline & Charter Operator Solutions", description: industry.description, url: "/industries/cargo-charter" })} />
+      <JsonLd data={faqSchema(CARGO_FAQS)} />
       <PageHero
         eyebrow="Industries"
         title={industry.h1}

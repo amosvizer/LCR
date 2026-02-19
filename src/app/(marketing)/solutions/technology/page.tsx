@@ -21,7 +21,26 @@ import {
 } from "lucide-react";
 
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
+
+const TECH_FAQS = [
+  {
+    question: "What technology systems do airlines need?",
+    answer: "Modern airlines require an integrated technology stack including flight operations systems, crew scheduling and tracking, maintenance tracking (MRO software), dispatch and flight following systems, safety management systems (SMS), document management, training records management, and regulatory compliance monitoring. The specific requirements depend on your certificate type, fleet size, and operational complexity.",
+  },
+  {
+    question: "How long does aviation technology implementation take?",
+    answer: "A full technology implementation typically takes 3 to 9 months from vendor selection to go-live, depending on the system complexity and scope of integration. LCR manages the entire lifecycle: requirements analysis, vendor evaluation, contract negotiation, implementation planning, data migration, user training, on-the-job training (OJT), and post-implementation support.",
+  },
+  {
+    question: "Should we build custom aviation software or buy off-the-shelf?",
+    answer: "For most operators, commercial off-the-shelf (COTS) solutions are the recommended approach. They offer proven functionality, vendor support, regulatory updates, and lower total cost of ownership. Custom development is typically only justified for unique operational requirements that no commercial product addresses. LCR evaluates your specific needs and recommends the most cost-effective path.",
+  },
+  {
+    question: "What happens when we outgrow our current aviation systems?",
+    answer: "LCR provides technology lifecycle support including system assessments, migration planning, and replacement implementation. When your operation expands — adding aircraft types, new bases, or international routes — we evaluate whether your current systems can scale or if a technology upgrade is needed, then manage the transition to minimize operational disruption.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Technology Solutions — Selection, Implementation & Lifecycle Support",
@@ -140,6 +159,7 @@ export default function TechnologyPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "Technology Solutions", href: "/solutions/technology" }])} />
       <JsonLd data={serviceSchema({ name: "Technology Solutions — Selection, Implementation & Lifecycle Support", description: "End-to-end operational technology consulting for aviation: system selection, implementation, training, OJT, and ongoing support.", url: "/solutions/technology" })} />
+      <JsonLd data={faqSchema(TECH_FAQS)} />
       <PageHero
         eyebrow="Technology Solutions"
         title="Technology Selection, Implementation & Lifecycle Support"

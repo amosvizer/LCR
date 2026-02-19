@@ -12,9 +12,9 @@ export interface IndustryPage {
 export const industryPages: IndustryPage[] = [
   {
     slug: "commercial",
-    title: "Commercial Airlines",
+    title: "Commercial Airline Certification & Compliance Consulting",
     h1: "Commercial Airline Certification & Compliance",
-    description: "Deep regulatory expertise and AI-enhanced documentation precision for commercial airlines.",
+    description: "Part 121 certification, fleet expansion, ETOPS authorization, and ongoing compliance consulting for commercial airlines. Former FAA inspectors with 95%+ DCT acceptance.",
     content: "From startups seeking their first Part 121 certificate to established carriers expanding their route authority, LCR provides the deep regulatory expertise and AI-enhanced documentation precision that commercial airlines need. We have supported domestic, flag, and supplemental operations for airlines including Eastern Airlines, Silver Airways, CommutAir, ExpressJet, and Swift Air.",
     services: [
       "Initial Part 121 Certification",
@@ -31,9 +31,9 @@ export const industryPages: IndustryPage[] = [
   },
   {
     slug: "cargo-charter",
-    title: "Cargo & Charter",
+    title: "Cargo Airline & Charter Operator Certification",
     h1: "Cargo Airline & Charter Operator Solutions",
-    description: "Specialized solutions for cargo carriers and charter operators with unique regulatory needs.",
+    description: "Part 121 and Part 135 certification, HAZMAT programs, cargo handling procedures, and DoD compliance for cargo carriers and charter operators. Former FAA inspectors.",
     content: "Cargo carriers and charter operators face unique regulatory requirements around payload handling, security programs, and operational flexibility. LCR has supported cargo certification for operators including Northern Air Cargo, 7 Air Cargo, AmeriJet, and Asia Pacific Airlines.",
     services: [
       "Part 121 and Part 135 Certification",
@@ -47,9 +47,9 @@ export const industryPages: IndustryPage[] = [
   },
   {
     slug: "mro",
-    title: "Repair Stations (MRO)",
+    title: "Repair Station (MRO) Certification & Part 145 Compliance",
     h1: "Repair Station Certification & Compliance",
-    description: "Robust documentation systems and quality control programs for Part 145 certification.",
+    description: "Part 145 repair station certification, quality control manuals, capability lists, and dual FAA/EASA compliance support. Former FAA airworthiness inspectors.",
     content: "Maintenance, Repair, and Overhaul organizations need robust documentation systems and quality control programs to earn and maintain Part 145 certification. LCR has supported repair stations including Flightstar, TechOps Mexico, AAR, AVEX, Aeroman, and ATS.",
     services: [
       "Repair Station Manual Development",
@@ -63,9 +63,9 @@ export const industryPages: IndustryPage[] = [
   },
   {
     slug: "agricultural",
-    title: "Agricultural Aviation",
+    title: "Agricultural Aviation Certification — Part 137 Consulting",
     h1: "Agricultural Aircraft Operations (Part 137)",
-    description: "Specialized certification consulting for aerial application operations.",
+    description: "Part 137 agricultural aircraft certification, operational manuals, congested area waivers, and specialized equipment documentation. Expert aviation consultants.",
     content: "Agricultural aviation operators face specialized certification requirements for aerial application operations. LCR provides Part 137 certification consulting, operational manual development, congested area waiver support, and specialized equipment documentation.",
     services: [
       "Part 137 Certification Consulting",

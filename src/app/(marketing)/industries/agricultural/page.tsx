@@ -8,7 +8,26 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { industryPages } from "@/data/services";
 import { ArrowRight } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
+
+const AG_FAQS = [
+  {
+    question: "What is Part 137 certification?",
+    answer: "Part 137 certification authorizes agricultural aircraft operations including aerial application of pesticides, fertilizers, seeds, and other materials. The certification process requires demonstrating knowledge of safe operating procedures, proper equipment, and compliance with environmental regulations. It covers both manned and unmanned (drone) agricultural aircraft operations.",
+  },
+  {
+    question: "What is a congested area waiver for agricultural aviation?",
+    answer: "A congested area waiver allows agricultural aircraft operators to conduct aerial application operations over or near areas that would normally be restricted under FAA regulations. The waiver requires demonstrating safe operating procedures, emergency protocols, and mitigation measures to protect people and property on the ground. LCR assists operators with waiver applications and supporting documentation.",
+  },
+  {
+    question: "Do agricultural drone operations require Part 137 certification?",
+    answer: "Unmanned aircraft systems (UAS/drones) used for agricultural aerial application may require Part 137 certification depending on the operation. Operators applying substances (pesticides, fertilizers, seeds) by drone are generally subject to Part 137 requirements in addition to Part 107 remote pilot certification. LCR can help determine which certifications apply to your specific operation.",
+  },
+  {
+    question: "What documentation do Part 137 operators need?",
+    answer: "Part 137 operators need an operational manual covering aircraft operations procedures, safety protocols, and emergency procedures; training records for all pilots and ground crew; aircraft maintenance documentation; HAZMAT handling procedures (if applying regulated substances); congested area plans (if applicable); and records of all aerial application operations conducted.",
+  },
+];
 
 const industry = industryPages.find((p) => p.slug === "agricultural")!;
 
@@ -23,6 +42,7 @@ export default function AgriculturalPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries" }, { name: "Agricultural Aviation", href: "/industries/agricultural" }])} />
       <JsonLd data={serviceSchema({ name: "Agricultural Aircraft Operations (Part 137)", description: industry.description, url: "/industries/agricultural" })} />
+      <JsonLd data={faqSchema(AG_FAQS)} />
       <PageHero
         eyebrow="Industries"
         title={industry.h1}

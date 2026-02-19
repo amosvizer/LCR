@@ -21,15 +21,14 @@ export function serviceSchema(service: {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${SITE_URL}${service.url}#service`,
     name: service.name,
     description: service.description,
     url: `${SITE_URL}${service.url}`,
     provider: {
-      "@type": "Organization",
-      name: "LCR Aero Group",
-      url: SITE_URL,
+      "@id": `${SITE_URL}/#organization`,
     },
-    areaServed: { "@type": "Country", name: "United States" },
+    areaServed: "Worldwide",
     serviceType: "Aviation Certification Consulting",
   };
 }
@@ -56,16 +55,16 @@ export function personSchema(member: {
   specialties: string[];
   image?: string;
 }) {
+  const slug = member.name.toLowerCase().replace(/[^a-z]+/g, "-");
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${SITE_URL}/about/team#${slug}`,
     name: member.name,
     jobTitle: member.title,
     description: member.bio,
     worksFor: {
-      "@type": "Organization",
-      name: "LCR Aero Group",
-      url: SITE_URL,
+      "@id": `${SITE_URL}/#organization`,
     },
     knowsAbout: member.specialties,
     ...(member.image && { image: `${SITE_URL}${member.image}` }),

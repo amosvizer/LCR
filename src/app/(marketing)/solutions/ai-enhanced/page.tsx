@@ -17,7 +17,26 @@ import {
 } from "lucide-react";
 
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
+
+const AI_FAQS = [
+  {
+    question: "How does AI improve FAA certification accuracy?",
+    answer: "LCR's AI tools use Retrieval-Augmented Generation (RAG) to cross-reference every statement in your manuals against the full text of 14 CFR, FAA orders, and advisory circulars in real time. This automated verification catches regulatory citation errors, identifies missing compliance items, and detects conflicts between manual sections — tasks that would take human reviewers days to complete manually.",
+  },
+  {
+    question: "Is AI-generated documentation accepted by the FAA?",
+    answer: "LCR does not submit AI-generated documentation to the FAA. Our AI tools assist human subject matter experts — former FAA inspectors — by automating verification, cross-referencing, and quality assurance. Every document is reviewed, refined, and approved by our team before submission. The AI enhances precision and speed; the expertise and judgment remain human.",
+  },
+  {
+    question: "What is RAG in aviation compliance?",
+    answer: "RAG (Retrieval-Augmented Generation) is an AI technique that combines a language model with a curated knowledge base of regulatory documents. In LCR's implementation, the system retrieves relevant sections of 14 CFR, FAA orders, and advisory circulars to verify and support compliance statements. This ensures every citation is accurate and every cross-reference is valid.",
+  },
+  {
+    question: "What ROI can operators expect from AI-enhanced certification?",
+    answer: "Operators working with LCR's AI-enhanced methodology typically see 30-50% reduction in documentation development time, near-elimination of regulatory citation errors, and significantly fewer FAA revision requests. Our 95%+ first-time DCT acceptance rate — well above industry average — translates directly to faster certification timelines, reduced consulting costs, and earlier revenue generation.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "AI-Enhanced Certification: ROI with AI",
@@ -100,6 +119,7 @@ export default function AiEnhancedPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Solutions", href: "/solutions" }, { name: "AI-Enhanced Services", href: "/solutions/ai-enhanced" }])} />
       <JsonLd data={serviceSchema({ name: "AI-Enhanced Certification Services", description: "Purpose-built AI tools for aviation certification: automated guidance verification, RAG compliance quoting, rapid manual generation, and conflict detection.", url: "/solutions/ai-enhanced" })} />
+      <JsonLd data={faqSchema(AI_FAQS)} />
       <PageHero
         eyebrow="Achieving High-Confidence Regulatory Acceptance"
         title="AI-Enhanced Certification: ROI with AI"

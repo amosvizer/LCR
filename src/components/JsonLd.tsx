@@ -14,6 +14,7 @@ export function JsonLd({ data }: JsonLdProps) {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://lcr.aero/#organization",
   name: "LCR Aero Group",
   url: "https://lcr.aero",
   logo: "https://lcr.aero/images/logo/lcr-logo.png",
@@ -26,7 +27,7 @@ export const organizationSchema = {
     contactType: "sales",
     availableLanguage: "English",
   },
-  sameAs: [],
+  sameAs: ["https://www.linkedin.com/company/111646937/"],
   address: {
     "@type": "PostalAddress",
     addressCountry: "US",
@@ -51,13 +52,16 @@ export const organizationSchema = {
 export const consultingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://lcr.aero/#service",
   name: "LCR Aero Group",
   url: "https://lcr.aero",
   description:
     "Aviation certification and compliance consulting. FAA Part 121, 135, 145, and 137 certification services.",
+  image: "https://lcr.aero/images/logo/lcr-logo.png",
   priceRange: "$$$$",
   serviceType: "Aviation Certification Consulting",
   areaServed: "Worldwide",
+  provider: { "@id": "https://lcr.aero/#organization" },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Aviation Certification Services",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Linkedin } from "lucide-react";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
 const QUICK_LINKS = [
@@ -10,6 +11,13 @@ const QUICK_LINKS = [
   { label: "Case Studies", href: "/about/case-studies" },
   { label: "Contact", href: "/contact" },
   { label: "Knowledge Hub", href: "/knowledge" },
+] as const;
+
+const INDUSTRY_LINKS = [
+  { label: "Commercial Airlines", href: "/industries/commercial" },
+  { label: "Cargo & Charter", href: "/industries/cargo-charter" },
+  { label: "Repair Stations (MRO)", href: "/industries/mro" },
+  { label: "Agricultural Aviation", href: "/industries/agricultural" },
 ] as const;
 
 const SERVICE_LINKS = [
@@ -47,7 +55,7 @@ export function Footer() {
 
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Brand */}
           <div className="lg:pr-8">
             <Link href="/" className="inline-block">
@@ -69,6 +77,17 @@ export function Footer() {
             >
               info@lcr.aero
             </a>
+            <div className="mt-4">
+              <a
+                href="https://www.linkedin.com/company/111646937/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LCR Aero Group on LinkedIn"
+                className="inline-flex items-center gap-1.5 text-aero-silver/50 transition-colors duration-200 hover:text-cyan"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -96,6 +115,24 @@ export function Footer() {
             </h4>
             <nav className="mt-5 space-y-3" aria-label="Services">
               {SERVICE_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm text-aero-silver/60 transition-colors duration-200 hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Column 4: Industries */}
+          <div>
+            <h4 className="font-heading text-sm font-semibold uppercase tracking-wider text-white">
+              Industries
+            </h4>
+            <nav className="mt-5 space-y-3" aria-label="Industries">
+              {INDUSTRY_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}

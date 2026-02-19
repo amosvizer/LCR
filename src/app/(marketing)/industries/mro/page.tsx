@@ -8,7 +8,26 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerCo
 import { industryPages } from "@/data/services";
 import { ArrowRight } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
-import { breadcrumbSchema, serviceSchema } from "@/lib/schemas";
+import { breadcrumbSchema, serviceSchema, faqSchema } from "@/lib/schemas";
+
+const MRO_FAQS = [
+  {
+    question: "What is required for Part 145 repair station certification?",
+    answer: "Part 145 certification requires a Repair Station Manual detailing your organization, procedures, and quality system; a Quality Control Manual with inspection procedures and quality assurance processes; a Capability List defining the specific work you are authorized to perform; qualified personnel with appropriate training and experience; adequate facilities, equipment, and tooling; and a training program for all maintenance personnel.",
+  },
+  {
+    question: "How long does Part 145 certification take?",
+    answer: "Part 145 repair station certification typically takes 6 to 12 months from initial application to certificate issuance. The timeline depends on the scope of your requested ratings, the complexity of your quality system, facility readiness, and FAA FSDO workload. A well-prepared application with comprehensive documentation can significantly accelerate the process.",
+  },
+  {
+    question: "Can a repair station hold both FAA and EASA certification?",
+    answer: "Yes, dual FAA/EASA certification is common for repair stations serving international customers. While both regulatory frameworks share core principles, there are significant differences in documentation requirements, quality system expectations, and personnel qualification standards. LCR has supported numerous repair stations through dual certification, ensuring compliance with both FAA Part 145 and EASA Part 145 requirements.",
+  },
+  {
+    question: "What is a repair station capability list?",
+    answer: "A Capability List is a detailed document that defines the specific maintenance, repair, and overhaul work a Part 145 repair station is authorized to perform. It lists approved aircraft, engines, propellers, components, and the specific tasks or operations the station can accomplish. The capability list is part of your Operations Specifications and must be kept current as you add or remove capabilities.",
+  },
+];
 
 const industry = industryPages.find((p) => p.slug === "mro")!;
 
@@ -23,6 +42,7 @@ export default function MROPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries" }, { name: "Repair Stations (MRO)", href: "/industries/mro" }])} />
       <JsonLd data={serviceSchema({ name: "Repair Station Certification & Compliance", description: industry.description, url: "/industries/mro" })} />
+      <JsonLd data={faqSchema(MRO_FAQS)} />
       <PageHero
         eyebrow="Industries"
         title={industry.h1}
