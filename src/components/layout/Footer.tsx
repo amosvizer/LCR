@@ -148,7 +148,7 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/5">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 pt-6 pb-20 sm:flex-row sm:pb-24 lg:px-8">
           <p className="text-xs text-aero-silver/40">
             &copy; {new Date().getFullYear()} LCR Aero Group. All rights
             reserved.

@@ -26,9 +26,9 @@ export function StickyCTA() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed inset-x-0 bottom-0 z-40 p-4 sm:p-6"
+          className="pointer-events-none fixed inset-x-0 bottom-0 z-40 p-4 sm:p-6"
         >
-          <div className="glass mx-auto flex max-w-3xl items-center justify-between gap-4 rounded-2xl px-6 py-4 shadow-2xl shadow-black/20">
+          <div className="pointer-events-auto glass mx-auto flex max-w-3xl items-center justify-between gap-4 rounded-2xl px-6 py-4 shadow-2xl shadow-black/20">
             <p className="hidden text-sm font-medium text-aero-silver sm:block">
               Ready to accelerate your certification?
             </p>
