@@ -116,6 +116,17 @@ export function Footer() {
             &copy; {new Date().getFullYear()} LCR Aero Group. All rights
             reserved.
           </p>
+          <p className="text-xs text-aero-silver/40">
+            Website by{" "}
+            <a
+              href="https://www.twochi.com/solutions/digital/website-design"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-aero-silver/60 transition-colors duration-200 hover:text-cyan"
+            >
+              TwoChi
+            </a>
+          </p>
           <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5">
             <div className="h-1.5 w-1.5 rounded-full bg-cyan" />
             <span className="text-xs font-medium text-aero-silver/60">
