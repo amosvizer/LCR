@@ -15,6 +15,7 @@ export const NAV_ITEMS = [
       { label: "Technical Publications", href: "/solutions/publications", description: "Aviation manual development and revisions" },
       { label: "AI-Enhanced Services", href: "/solutions/ai-enhanced", description: "ROI with AI — automated compliance verification" },
       { label: "Technology Solutions", href: "/solutions/technology", description: "Technology selection, implementation, and lifecycle support" },
+      { label: "Training Courses", href: "/solutions/training", description: "CASS, SMS, auditing, and investigation courses taught by former FAA inspectors" },
     ],
   },
   {
@@ -102,6 +103,13 @@ export const SERVICE_CATEGORIES = [
     description: "End-to-end technology consulting: selection, implementation, training, and ongoing support for your entire operational stack.",
     icon: "Monitor",
     subServices: ["Technology Selection", "System Implementation", "Training & OJT", "Ongoing Support"],
+  },
+  {
+    title: "Training Courses",
+    href: "/solutions/training",
+    description: "Professional aviation training courses taught by former FAA inspectors. CASS, SMS, auditing techniques, and interview and investigation methods.",
+    icon: "GraduationCap",
+    subServices: ["CASS Training", "SMS Training", "Auditing Techniques", "Investigation Techniques"],
   },
 ] as const;
 

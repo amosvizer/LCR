@@ -12,6 +12,7 @@ import {
   Brain,
   Monitor,
   Scale,
+  GraduationCap,
   ArrowRight,
 } from "lucide-react";
 
@@ -33,6 +34,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Brain,
   Monitor,
   Scale,
+  GraduationCap,
 };
 
 export default function SolutionsPage() {

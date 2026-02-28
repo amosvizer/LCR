@@ -28,6 +28,7 @@ const SERVICE_LINKS = [
   { label: "Technical Publications", href: "/solutions/publications" },
   { label: "AI-Enhanced Services", href: "/solutions/ai-enhanced" },
   { label: "Technology Solutions", href: "/solutions/technology" },
+  { label: "Training Courses", href: "/solutions/training" },
 ] as const;
 
 export function Footer() {
