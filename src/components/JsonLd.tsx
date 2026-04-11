@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/constants";
+
 interface JsonLdProps {
   data: Record<string, unknown>;
 }
@@ -14,10 +16,10 @@ export function JsonLd({ data }: JsonLdProps) {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://lcr.aero/#organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "LCR Aero Group",
-  url: "https://lcr.aero",
-  logo: "https://lcr.aero/images/logo/lcr-logo.png",
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/logo/lcr-logo.png`,
   description:
     "Former FAA inspectors delivering AI-enhanced aviation certification consulting. 95%+ first-time DCT acceptance rate. Since 2013.",
   foundingDate: "2013",
@@ -52,16 +54,16 @@ export const organizationSchema = {
 export const consultingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://lcr.aero/#service",
+  "@id": `${SITE_URL}/#service`,
   name: "LCR Aero Group",
-  url: "https://lcr.aero",
+  url: SITE_URL,
   description:
     "Aviation certification and compliance consulting. FAA Part 121, 135, 145, and 137 certification services.",
-  image: "https://lcr.aero/images/logo/lcr-logo.png",
+  image: `${SITE_URL}/images/logo/lcr-logo.png`,
   priceRange: "$$$$",
   serviceType: "Aviation Certification Consulting",
   areaServed: "Worldwide",
-  provider: { "@id": "https://lcr.aero/#organization" },
+  provider: { "@id": `${SITE_URL}/#organization` },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Aviation Certification Services",

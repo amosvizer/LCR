@@ -1,0 +1,40 @@
+# LCR Aero Group
+
+> Aviation certification and compliance consulting firm staffed by former FAA inspectors. AI-enhanced methodology with 95%+ first-time DCT acceptance rate. Serving the aviation industry since 2013.
+
+## About
+
+LCR Aero Group is an aviation certification and compliance consulting firm that specializes in FAA air carrier and air agency certification under 14 CFR Parts 121, 135, 145, and 137. The firm is staffed by former FAA Aviation Safety Inspectors who bring direct regulatory experience to every engagement. LCR combines traditional FAA certification expertise with AI-enhanced compliance verification tools to deliver a 95%+ first-time Data Collection Tool (DCT) acceptance rate — significantly above the industry average.
+
+## Services
+
+- **FAA Air Carrier & Air Agency Certification**: Complete 5-Phase certification management for Parts 121, 135, 145, and 137 operations
+- **Operational Expansion**: New aircraft types, ETOPS authorization, extended overwater operations, CPDLC, flag carrier transitions, and additional repair station ratings
+- **Safety Management Systems (SMS)**: SMS implementation, gap analysis, manual development, SMS Data Collection Tool completion, and SMS Statement of Compliance
+- **Regulatory Compliance Auditing**: Independent FAA, IATA/IOSA, and DoD compliance evaluations and audit programs
+- **Technical Publications**: Aviation manual development, revision, compliance matrices, and DCT preparation
+- **AI-Enhanced Compliance**: Automated regulatory verification using RAG-powered tools, precision compliance quoting, conflict detection, and documentation quality assurance
+- **Technology Solutions**: End-to-end operational technology consulting including system selection, implementation, training, and ongoing support
+- **Training Courses**: Professional aviation training taught by former FAA inspectors — CASS, SMS, auditing techniques, and interview/investigation methods
+
+## Industries Served
+
+- **Commercial Airlines**: Part 121 domestic, flag, and supplemental operations
+- **Cargo & Charter Operators**: Cargo carriers and charter operator certification and compliance
+- **Repair Stations (MRO)**: Part 145 repair station certification, ratings, and compliance
+- **Agricultural Aviation**: Part 137 aerial application operations
+
+## Key Differentiators
+
+- Former FAA Aviation Safety Inspectors on staff
+- 95%+ first-time DCT acceptance rate
+- 400+ combined years of FAA and aviation experience
+- 50+ air carrier and air agency clients served
+- AI-enhanced compliance verification technology
+- Serving the aviation industry since 2013
+
+## Contact
+
+- Website: https://lcr.aero
+- Email: info@lcr.aero
+- Contact page: https://lcr.aero/contact

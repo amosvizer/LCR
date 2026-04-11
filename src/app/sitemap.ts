@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/solutions/ai-enhanced",
     "/solutions/technology",
     "/solutions/compliance-auditing",
+    "/solutions/training",
     "/industries",
     "/industries/commercial",
     "/industries/cargo-charter",
@@ -28,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const hubPages = ["/solutions", "/industries"];
   return staticPages.map((route) => ({
     url: `${SITE_URL}${route}`,
-    lastModified: new Date("2026-02-18"),
+    lastModified: new Date("2026-04-11"),
     changeFrequency: (route === "" || hubPages.includes(route) ? "weekly" : "monthly") as "weekly" | "monthly",
     priority: route === "" ? 1.0 : route.split("/").length <= 2 ? 0.9 : 0.7,
   }));

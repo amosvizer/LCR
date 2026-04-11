@@ -1,4 +1,4 @@
-const SITE_URL = "https://lcr.aero";
+import { SITE_URL } from "@/lib/constants";
 
 export function breadcrumbSchema(items: { name: string; href: string }[]) {
   return {
