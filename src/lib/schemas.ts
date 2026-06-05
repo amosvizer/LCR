@@ -48,7 +48,13 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
-export function reviewSchema(
+/**
+ * Hangs aggregateRating + Review nodes off the canonical Organization node so
+ * the page emits a single, merged Organization (avoids two nodes sharing one @id).
+ * Pass the base organization schema; returns the merged object to render.
+ */
+export function organizationReviewSchema(
+  baseOrganization: Record<string, unknown>,
   testimonials: {
     quote: string[];
     name: string;
@@ -57,10 +63,7 @@ export function reviewSchema(
   }[]
 ) {
   return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${SITE_URL}/#organization`,
-    name: "LCR Aero Group",
+    ...baseOrganization,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5",

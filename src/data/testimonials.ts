@@ -18,7 +18,7 @@ export const testimonials: Testimonial[] = [
   {
     quote: [
       "LCR Aero Group has been an invaluable partner in our journey to obtain our Part 121 Air Carrier Certificate. From the outset, their team has worked side-by-side with our organization, providing expert guidance, practical solutions, and consistent support throughout every phase of the certification process.",
-      "Their deep understanding of FAA requirements, combined with their ability to effectively coordinate with both our team and FAA personnel, has made a complex and demanding process far more manageable. LCR Aero Group's professionalism, responsiveness, and commitment to our success have been evident at every step. We highly recommend LCR Aero Group to any organization seeking knowledgeable and dedicated aviation consulting services.",
+      "Their deep understanding of FAA requirements, combined with their ability to effectively coordinate with both our team and FAA personnel, has made a complex and demanding process far more manageable. LCR Aero Group's professionalism, responsiveness, and commitment to our success have been evident at every step. We are confident that, with their continued support, we will successfully achieve our Part 121 certification. We highly recommend LCR Aero Group to any organization seeking knowledgeable and dedicated aviation consulting services.",
     ],
     name: "Larry Gregg",
     title: "Accountable Executive",

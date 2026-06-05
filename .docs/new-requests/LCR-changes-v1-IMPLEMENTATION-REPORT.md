@@ -220,7 +220,24 @@ This lands at the efficient end of the original `34–48 h` estimate — the dat
 
 ---
 
-## 8. Deployment Notes
+## 8. Post-Implementation Review (QA Pass)
+
+After delivery, the full implementation was put through an adversarial QA pass — an **independent code review** (separate reviewer, against `CLAUDE.md` standards) plus a **visual/responsive audit** at edge breakpoints (header at the 1024 px `lg` breakpoint where the desktop nav appears; mobile 390 px for testimonials, the AI page, and the new industry pages). Findings and resolutions:
+
+| # | Finding | Severity | Resolution |
+|---|---|---|---|
+| 1 | **Testimonial #1 (Larry Gregg) dropped a sentence** vs. the client source — "We are confident that, with their continued support, we will successfully achieve our Part 121 certification." | High (data fidelity) | ✅ Restored verbatim. Flagged for client: this line implies the certificate is still pending as of the quote — client may wish to update or cut it (their call, not a silent edit). |
+| 2 | Homepage emitted **two `Organization` JSON-LD nodes sharing one `@id`** (fragile, even if Google usually merges) | Minor (best practice) | ✅ Refactored to a single merged Organization node carrying `aggregateRating` + the six `Review`s (`organizationReviewSchema`). Verified: one top-level Organization, 6 Reviews. |
+| 3 | AI-page `<title>` ran ~71 chars with the layout's `"%s \| LCR Aero Group"` template — would truncate in SERPs | Minor (SEO) | ✅ Shortened to "AI-Enhanced Certification Services" (keeps the keyword; H1 stays the client's "AI-Enhanced Services"). |
+| 4 | New industry pages omitted the `clients` logo block present on the other industry pages | Minor (consistency) | ✅ Added the conditional block to both, so all six industry pages are structurally identical and future client names render automatically. |
+
+**Verified clean by the independent review (no action needed):** masonry/responsive behavior, header lockup at all breakpoints, accessibility (heading hierarchy, `aria-hidden` on decorative icons/avatars/wordmark, descriptive image `alt`), App Router metadata + opengraph-image routes, server/client boundaries, homepage section-background alternation, and nav/footer/sitemap/data wiring for the two new routes.
+
+**Re-verification after fixes:** `next build` ✅ green (52/52 static pages, compiled successfully), `tsc --noEmit` ✅ clean, ESLint ✅ clean, homepage JSON-LD ✅ single Organization node with 6 Reviews. Added ~1.5 h (review + visual QA + four fixes + re-verification) → **revised total ≈ 35.5 h**.
+
+---
+
+## 9. Deployment Notes
 
 - Production build is green; safe to deploy to a Vercel preview for sign-off.
 - On Windows, run `next build` with the local `next dev` server stopped (it locks `.next`).

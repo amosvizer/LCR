@@ -104,6 +104,33 @@ export default function UasAamPage() {
         </div>
       </section>
 
+      {/* Client Logos Section */}
+      {industry.clients.length > 0 && (
+        <section className="py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <FadeIn>
+              <h2 className="mb-4 text-center font-heading text-2xl font-bold text-deep-blue sm:text-3xl">
+                Trusted By Industry Leaders
+              </h2>
+              <p className="mb-12 text-center font-body text-base text-slate">
+                We have proudly supported these organizations in achieving their
+                certification and compliance goals.
+              </p>
+            </FadeIn>
+
+            <StaggerContainer className="flex flex-wrap items-center justify-center gap-4">
+              {industry.clients.map((client) => (
+                <StaggerItem key={client}>
+                  <div className="rounded-full border border-aero-silver bg-white px-6 py-3 font-heading text-sm font-semibold text-deep-blue shadow-sm transition-all duration-200 hover:border-cyan/40 hover:shadow-md">
+                    {client}
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+      )}
+
       {/* Back to Industries Link */}
       <section className="border-t border-aero-silver py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -49,7 +49,7 @@ const AI_FAQS = [
 ];
 
 export const metadata: Metadata = {
-  title: "AI-Enhanced Services for FAA Certification & Compliance",
+  title: "AI-Enhanced Certification Services",
   description:
     "Private, aviation-specific AI workflows — curated regulatory knowledge base, RAG retrieval, compliance matrices, and NLP quality checks — with former FAA inspectors reviewing every output.",
   alternates: { canonical: "/solutions/ai-enhanced" },

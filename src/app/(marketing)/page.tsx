@@ -9,7 +9,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { CTASection } from "@/components/sections/CTASection";
 import { JsonLd, organizationSchema, consultingServiceSchema } from "@/components/JsonLd";
-import { breadcrumbSchema, reviewSchema } from "@/lib/schemas";
+import { breadcrumbSchema, organizationReviewSchema } from "@/lib/schemas";
 import { testimonials } from "@/data/testimonials";
 
 export const metadata: Metadata = {
@@ -19,9 +19,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={organizationSchema} />
+      <JsonLd data={organizationReviewSchema(organizationSchema, testimonials)} />
       <JsonLd data={consultingServiceSchema} />
-      <JsonLd data={reviewSchema(testimonials)} />
       <JsonLd data={breadcrumbSchema([{ name: "Home", href: "/" }])} />
       <HeroSection />
       <TrustBar />
