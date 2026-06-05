@@ -10,50 +10,50 @@ _Digital · Operations · Infrastructure · Strategy_
 **To:** Ami Vizer, Chairman
 **From:** Lauren — Chief Architect
 **Date:** June 5, 2026
-**Re:** LCR Aero Group — my read on Larry's first change list
+**Re:** LCR Aero Group — what we shipped on Larry's first list
 
 ---
 
 Ami,
 
-Went through Larry's list. Strong overall — three items already done, a couple genuinely great. But a handful would quietly hurt the site if we did them literally, and since Larry's your friend I'd rather flag it now than have it surface later.
+It's built. I went through Larry's whole list, did the ten items that were ours to do, and held the three that need a call from you or Larry before I touch them. Quick version here; the full breakdown is in the report next to this note.
 
-It's aviation people, not web people — exactly as it should be. Their job is to be right about Part 121 and SMS; ours is to make it land on a screen. The friction's only where those two meet. A few examples:
+The thing I keep coming back to: it's aviation people, not web people — exactly as it should be. Their job is to be right about Part 121 and SMS; ours is to make it land on a screen. Most of the work was just translating one into the other. A few examples of what that looked like:
 
-**The "Part 121 → 121 and 135" one.** Same lunch-menu/dinner-menu thing you and I hit on the TwoChi build, when you wanted to mix two pages we'd kept separate on purpose. Larry's note points at the Commercial/121 page and says "add 135" — but the Cargo & Charter/121-&-135 page is already hanging right next to it. Thirty-second question to Larry, not a find-and-replace. I won't guess on anything regulatory.
+**The homepage paragraph.** Good copy, wrong spot — 110 words of brochure where the billboard goes. So we kept the top punchy and built his paragraph into a proper "Who We Serve" section right below it: two clean columns, every operator type and service he listed, where people actually read it. His words, better real estate.
 
-**The video.** Couldn't even watch it — the Drive link's locked. So step one is Larry opening access or sending the file. And a Drive link isn't a video host, so we'd re-host it properly. I won't put it on the homepage until I've actually seen it.
+**The AI page.** Larry's new copy was genuinely strong — better than what was there. The only problem was format; dropping it in as-is would've been a wall of text. So we rebuilt it into the site's own card system — six capability cards, a pull-quote, the "human experts in the loop" trust line. Same content he wrote, looks like it belongs.
 
-**The homepage paragraph.** Good copy, wrong spot — 110 words of brochure sitting where the billboard goes. We keep the top punchy and move his paragraph just below it, where people actually read.
+**The two images.** The UAS banner had "Unmanned and AAM" baked into the pixels; the pilot-school shot was a sim snapshot off a shop floor. Neither was usable on a premium site, so we generated two clean, on-brand replacements — an eVTOL over a vertiport at dusk, and a glass-cockpit sim. No text in the pixels, brand colors, sharp.
 
-**Two of the images.** The UAS one has "Unmanned and AAM" baked into the pixels; the pilot-school one's a sim snapshot off a shop floor. We swap both for clean, on-brand images.
+And the part I'm happiest with: the two new industries came in as a single sentence each. We didn't treat them that way. Pilot Schools and UAS/AAM got the same depth, services, FAQs, and internal linking as the industry pages already live, so they read like they were always there.
 
-None of it's a dealbreaker — just the usual translation between what the expert meant and what works on a screen.
+## What's live
 
-One good-kind-of-difference: a few of these read as "just add a paragraph" — the two new industries are a single sentence each. We won't treat them that way. Pilot Schools and UAS/AAM get the same depth and internal linking as the industry pages already live, so they read like they belong.
+Full detail — every item, the decisions, the hours — is in the report (`LCR-changes-v1-IMPLEMENTATION-REPORT.md`). Short version:
 
-## The specifics
+- **The testimonials.** Six real, named endorsements — ExpressJet, Asia Pacific, Best Jets, AVEX, Chief Aviation Advisors — built into a proper section with review markup for search. The site had zero social proof before this; it was the highest-return item on the list, and it came out the best-looking thing on the page.
+- **Homepage and AI page**, as above — plus the hero image, title, and buttons you already signed off on.
+- **Two new industry pages** with the generated images, wired all the way through nav, footer, sitemap, and search markup.
+- **The logo.** "Aero Group" done as a real lockup beside the mark — proper type, scales with the header — not text glued onto the PNG.
 
-Full tally sheet — rankings, value, hours — is next to this note (`LCR-changes-v1-PLAN.md`). Short version:
+It's all built to our standard, the production build is clean, and it's ready for a preview link whenever you want to walk Larry through it.
 
-- **Done (3):** hero image, "Request Information" buttons, new hero title. _One nit: the middle title line, "Begin Operations Quicker," isn't parallel with the other two — cleaner options are in the plan._
-- **Quick wins:** the AI-page intro (his copy's good as-is), splitting that homepage paragraph, and the "Aero Group" logo — done as a real lockup, not text glued to the PNG.
-- **The big ones:** the six testimonials (ExpressJet, Asia Pacific, Best Jets, AVEX) — the site has zero social proof today, so highest return on the list. Plus the two new industry pages, and the AI-page rebuild — strong content, just needs to live in our card design instead of pasted in.
-- **Needs a conversation:** the 121/135 scope, and the video.
+## What I left with you
 
-After the three that are done, the rest is **~34–48 hours** to our standard — call it a week and a half. Video's separate and "it depends."
+Three I won't touch until there's a decision, because they're yours and Larry's, not mine:
 
-## How I'd like to proceed
+- **The "Part 121 → 121 and 135" change.** Same lunch-menu/dinner-menu thing you and I hit on the TwoChi build — the Commercial/121 page and the Cargo & Charter/121-&-135 page are separate on purpose, and his note would blur them. Thirty-second question to Larry, not a find-and-replace. I won't guess on anything regulatory. (The new homepage copy already says "121 and 135," so the breadth is covered while we wait.)
+- **The video.** You said drop it, so it's dropped — the Drive link was locked anyway.
+- **The hero's middle line.** "Begin Operations Quicker" isn't parallel with the other two; I've got a cleaner option staged the moment you pick one.
 
-I'll build the whole list to our standard, clear wins starting this week. The two that touch Larry — the 121/135 question and the locked video — land better from you, so I'll leave those with you and pick them up once you've got answers. You handle Larry; I handle the craft.
-
-One flag before I dive in: if Larry just wants the list done literally — every note in, as-is, shipped — that's a Craig's-team job, not mine. Your call.
+One flag, briefly: if it ever turns into "just run the list literally, as-is" — that's a Craig's-team job, not mine. I don't think that's where this is headed, but I'd rather say it now than later.
 
 And — who am I billing? You, like the original build, or a formal estimate to LCR?
 
-Let me know and I'll get going.
+About a week and a half of work, ~35 hours. Let me know on the three above and on billing, and I'll close them out.
 
 **Lauren**
 Chief Architect, TwoChi
 
-_P.S. — The testimonials are the real prize. Get me clean logos and an OK to publish the names and I'll make that section the best-looking thing on the site._
+_P.S. — Get me clean company logos and an OK to publish the names, and the testimonials section will be untouchable. Right now it's running on the names alone and it already looks the part._
