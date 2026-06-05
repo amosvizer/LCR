@@ -78,11 +78,11 @@ export function HeroSection() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-aero-silver/80 sm:text-lg sm:leading-8">
-            LCR Aero Group combines former FAA Aviation Safety Inspectors with
-            AI-powered compliance tools to deliver certification programs that the
-            FAA accepts the first time. Since 2013, we&apos;ve guided airlines, cargo
-            operators, repair stations, and agricultural aviation companies through
-            the most complex regulatory challenges in the industry.
+            LCR Aero Group pairs former FAA Aviation Safety Inspectors with
+            purpose-built AI to deliver certification programs the FAA accepts the
+            first time. Since 2013, we&apos;ve guided Part 121 and 135 operators,
+            repair stations, pilot schools, and emerging UAS/AAM organizations
+            through the industry&apos;s most complex regulatory challenges.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">

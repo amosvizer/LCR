@@ -76,6 +76,43 @@ export const industryPages: IndustryPage[] = [
     clients: [],
     image: "/images/aviation/runway-from-air.jpg",
   },
+  {
+    slug: "pilot-schools",
+    title: "Pilot School Certification — Part 141 & 142 Consulting",
+    h1: "Pilot Schools (Part 141 & 142)",
+    description: "FAA Part 141 and Part 142 certification and compliance consulting for pilot schools and training centers — Training Course Outlines, check airman programs, records systems, and SMS. Former FAA inspectors.",
+    content: "Achieving and maintaining FAA certification under 14 CFR Part 141 or 142 is essential to the successful operation of an aviation training center or flight school. LCR provides expert guidance and comprehensive support throughout the certification process and ongoing operations — from initial Training Course Outlines and curriculum development to check airman and evaluator programs, stage-check and records systems, and Safety Management Systems. Our former FAA inspectors help training organizations navigate complex regulatory requirements with confidence and efficiency.",
+    services: [
+      "Part 141 Pilot School Certification",
+      "Part 142 Training Center Certification",
+      "Training Course Outline (TCO) Development",
+      "Curriculum & Syllabus Design",
+      "Check Airman & Evaluator Programs",
+      "Stage Check & Records Systems",
+      "SMS for Training Organizations",
+      "FAA Audit & Surveillance Preparation",
+    ],
+    clients: [],
+    image: "/images/aviation/pilot-school.jpg",
+  },
+  {
+    slug: "uas-aam",
+    title: "UAS & Advanced Air Mobility (eVTOL) Certification Consulting",
+    h1: "UAS & Advanced Air Mobility (eVTOL)",
+    description: "FAA certification and compliance consulting for Unmanned Aircraft Systems (UAS) and Advanced Air Mobility (AAM / eVTOL) organizations — Part 107/108, BVLOS, powered-lift certification, and SMS. Former FAA inspectors.",
+    content: "LCR Aero Group assists Unmanned Aircraft Systems (UAS) and Advanced Air Mobility (AAM) organizations in obtaining and maintaining FAA certification while supporting the continued growth and expansion of their operations. As eVTOL aircraft, powered-lift operations, and beyond-visual-line-of-sight (BVLOS) missions move from concept to commercial reality, we help emerging operators navigate complex regulatory compliance and aviation safety requirements — translating evolving FAA frameworks into clear, actionable certification pathways.",
+    services: [
+      "Part 107 & 108 Compliance",
+      "BVLOS Operations & Waivers",
+      "Powered-Lift (eVTOL) Certification Support",
+      "Type & Production Certification Support",
+      "Operational Approvals & Exemptions",
+      "SMS for AAM & UAS Operations",
+      "Regulatory Strategy & Roadmapping",
+    ],
+    clients: [],
+    image: "/images/aviation/evtol-aam.jpg",
+  },
 ];
 
 export const caseStudies = [

@@ -225,8 +225,11 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="relative z-10 flex-shrink-0">
+        {/* Logo lockup */}
+        <Link
+          href="/"
+          className="relative z-10 flex flex-shrink-0 items-center gap-3"
+        >
           <Image
             src="/images/logo/lcr-logo.png"
             alt="LCR Aero Group"
@@ -234,10 +237,31 @@ export function Header() {
             height={40}
             className={cn(
               "h-auto transition-all duration-300",
-              scrolled ? "w-[120px]" : "w-[140px]"
+              scrolled ? "w-[116px]" : "w-[134px]"
             )}
             priority
           />
+          <span
+            aria-hidden
+            className="hidden items-center gap-3 sm:flex"
+          >
+            <span
+              className={cn(
+                "w-px bg-white/20 transition-all duration-300",
+                scrolled ? "h-6" : "h-7"
+              )}
+            />
+            <span
+              className={cn(
+                "font-heading font-semibold uppercase leading-[1.18] tracking-[0.24em] text-aero-silver/80 transition-all duration-300",
+                scrolled ? "text-[10px]" : "text-[11px]"
+              )}
+            >
+              Aero
+              <br />
+              Group
+            </span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}

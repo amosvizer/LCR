@@ -26,6 +26,8 @@ export const NAV_ITEMS = [
       { label: "Cargo & Charter", href: "/industries/cargo-charter", description: "Cargo carriers and charter operator solutions" },
       { label: "Repair Stations (MRO)", href: "/industries/mro", description: "Part 145 certification and compliance" },
       { label: "Agricultural Aviation", href: "/industries/agricultural", description: "Part 137 aerial application operations" },
+      { label: "Pilot Schools", href: "/industries/pilot-schools", description: "Part 141 & 142 training center certification" },
+      { label: "UAS & Advanced Air Mobility", href: "/industries/uas-aam", description: "UAS, eVTOL, and AAM certification support" },
     ],
   },
   {

@@ -18,6 +18,8 @@ const INDUSTRY_LINKS = [
   { label: "Cargo & Charter", href: "/industries/cargo-charter" },
   { label: "Repair Stations (MRO)", href: "/industries/mro" },
   { label: "Agricultural Aviation", href: "/industries/agricultural" },
+  { label: "Pilot Schools (Part 141 & 142)", href: "/industries/pilot-schools" },
+  { label: "UAS & Advanced Air Mobility", href: "/industries/uas-aam" },
 ] as const;
 
 const SERVICE_LINKS = [

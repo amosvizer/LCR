@@ -48,6 +48,45 @@ export function faqSchema(faqs: { question: string; answer: string }[]) {
   };
 }
 
+export function reviewSchema(
+  testimonials: {
+    quote: string[];
+    name: string;
+    title: string;
+    company: string;
+  }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "LCR Aero Group",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      bestRating: "5",
+      worstRating: "1",
+      reviewCount: testimonials.length,
+    },
+    review: testimonials.map((t) => ({
+      "@type": "Review",
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      author: {
+        "@type": "Person",
+        name: t.name,
+        jobTitle: t.title,
+        worksFor: { "@type": "Organization", name: t.company },
+      },
+      reviewBody: t.quote.join("\n\n"),
+    })),
+  };
+}
+
 export function personSchema(member: {
   name: string;
   title: string;

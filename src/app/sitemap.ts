@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/industries/cargo-charter",
     "/industries/mro",
     "/industries/agricultural",
+    "/industries/pilot-schools",
+    "/industries/uas-aam",
     "/about",
     "/about/team",
     "/about/case-studies",
